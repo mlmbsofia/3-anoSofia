@@ -1,0 +1,21 @@
+header {
+    background-color: #d39187;
+}
+
+body{
+    background-color: #f0c5bf;
+}
+
+.text {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+}
+
+.card-title{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+}
+
+.card-text{
+    font-family: 'Times New Roman', Times, serif;
+}
