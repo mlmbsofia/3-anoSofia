@@ -17,14 +17,14 @@
 echo "Olá mundo!<br>
 <h3> hoje etsá chovendo muito<\h3>";
 
-echo "<br>-------------------------------------<br>"
+echo "<br>-------------------------------------<br>";
 
 $nome = "Carlos";
 $idade = 17;
 $altura = 1.75;
 $adress = "Rua que sobe e desce, 222";
 
-echo "Nome:$nome, Idade:$idade, Altura: $autura, Endereço: $adress"
+echo "Nome:$nome, Idade:$idade, Altura: $autura, Endereço: $adress";
 
 $mensagem = "Olá!";
 if (print $mensagem) {
