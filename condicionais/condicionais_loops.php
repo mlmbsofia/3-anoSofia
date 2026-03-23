@@ -44,7 +44,7 @@ $nome = "Carlos";
 $idade = 26;
 $cpf = 1234567890;
 
-    echo "<br> Nome do cliente:".$nome "<br> Idade:".$idade "<br> CPF:".$cpf;
+    echo "<br> Nome do cliente:".$nome."<br> Idade:".$idade."<br> CPF:".$cpf;
 
     echo "<br>=======================================================<br>";
 
