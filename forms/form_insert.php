@@ -12,10 +12,10 @@
     <title>Form Insert</title>
 </head>
 <body>
-<form action="form_exit.php" method="post" class="row g-3 needs-validation" novalidate>
+<form action="form_exit_ufrs.php" method="post" class="row g-3 needs-validation" novalidate>
     <div class="col-md-4">
         <label for="validationCustom01" class="form-label">Nome</label>
-        <input type="text" class="form-control" id="validationCustom01" value="Mark" name="name" required>
+        <input type="text" class="form-control" id="validationCustom01" value="Mark" name="fullName" required>
         <div class="valid-feedback">
             Looks good!
         </div>
