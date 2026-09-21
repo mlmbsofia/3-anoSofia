@@ -1,129 +1,200 @@
 <?php
-//  MANIPULAÇÃO DE FORMULÁRIOS
 
-//  AS SUPERGLOBAIS $_GET E $_POST SÃO UTILIZADAS PARA COLETAR DADOS
-
-?>
-    <!--<form action="forms_welcome_post.php" method="post">-->
-    <!--    Name: <input type="text" name="name"><br>-->
-    <!--    E-mail: <input type="text" name="email"><br>-->
-    <!--    <input type="submit">-->
-    <!--</form>-->
-
-<?php
-//  Quando o usuário preenche os dados do formulário e clica no botão submit, os dados do formulário são enviados para processamento no arquivo PHP chamado welcome.php através do método HTTP POST.
-//  Para exibir os dados submetidos pode-se simplesmente fazer um echo para todas as variáveis
-
-//  Mesmo exemplo, só que agora com o método GET
-?>
-    <!--<form action="forms_welcome_get.php" method="get">-->
-    <!--    Name: <input type="text" name="name"><br>-->
-    <!--    E-mail: <input type="text" name="email"><br>-->
-    <!--    <input type="submit">-->
-    <!--</form>-->
-
-<?php
-//  $_GET é uma array de variáveis passadas para o script atual via parâmetros de pesquisa URL. As informações enviadas são visíveis para todos. É usada para informações ão sensíveis. Nunca deve ser utilizado para envio de senhas
-
-//  $_POST é uma array de variáveis passadas para o script atual via método HTTP POST. É invisível para os outros.
-
-// VALIDAÇÃO DE FORMULÁRIOS
-//  TENHA SEMPRE EM MENTE A SEGURANÇA NO PROCESSAMENTO DE FORMULÁRIOS
-
-$name = $email = $gender = $comment = $website = "";
-$nameErr = $emailErr = $genderErr = $websiteErr = "";
+$name = $email = $gender = $CPF = $phone = "";
+$nameErr = $emailErr = $genderErr = $CPFErr = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     if (empty($_POST["name"])) {
-        $nameErr = "Name is required";
+        $nameErr = "O nome é obrigatório.";
     } else {
         $name = test_input($_POST["name"]);
-//        verifica se o nome contém apenas letras e espaços em branco
-        if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-            $nameErr = "Permitido apenas letras e espaço em branco";
+
+        if (!preg_match("/^[a-zA-ZÀ-ÿ ]*$/", $name)) {
+            $nameErr = "Permitido apenas letras e espaços.";
         }
     }
 
     if (empty($_POST["email"])) {
-        $emailErr = "Email is required";
+        $emailErr = "O e-mail é obrigatório.";
     } else {
         $email = test_input($_POST["email"]);
-//        Verifica se o endereço de e-mail ´bem formado
+
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $emailErr = "Formato de e-mail inválido";
+            $emailErr = "Formato de e-mail inválido.";
         }
     }
 
-    if (empty($_POST["website"])) {
-        $website = "";
-    } else {
-        $website = test_input($_POST["website"]);
-//        Vwrifica se a sintaxe da URL é válida
-        if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i", $website));
-        $websiteErr = "URL inválida.";
+    if (!empty($_POST["phone"])) {
+        $phone = test_input($_POST["phone"]);
     }
 
-    if (empty($_POST["comment"])) {
-        $comment = "";
-    } else {
-        $comment = test_input($_POST["comment"]);
+    if (!empty($_POST["cpf"])) {
+        $CPF = test_input($_POST["cpf"]);
+
+        if (!preg_match("/^\d{3}\.\d{3}\.\d{3}-\d{2}$|^\d{11}$/", $CPF)) {
+            $CPFErr = "CPF inválido.";
+        }
     }
 
     if (empty($_POST["gender"])) {
-        $genderErr = "Gender is required";
+        $genderErr = "Selecione um gênero.";
     } else {
         $gender = test_input($_POST["gender"]);
     }
 }
 
-function test_input($data) {
+function test_input($data)
+{
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
     return $data;
 }
 ?>
-    <html lang="pt-BR">
-    <head>
-        <style>
-            .error{color: red}
-        </style>
 
-        <title>Formulários</title>
-    </head>
-    <body>
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-        Name: <input type="text" name="name" value="<?php echo $name; ?>"><br>
-        <span class="error">* <?php echo $nameErr;?></span>
-        <br><br>
-        E-mail: <input type="text" name="email" value="<?php echo $email; ?>"><br>
-        <span class="error">* <?php echo $emailErr;?></span>
-        <br><br>
-        Website: <input type="text" name="website" value="<?php echo $website; ?>"><br>
-        <span class="error"><?php echo $websiteErr;?></span>
-        <br><br>
-        Comment: <textarea name="comment" rows="5" cols="40" value="<?php echo $comment; ?>"></textarea><br>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-        <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female">Feminino
-        <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="male">Masculino
-        <input type="radio" name="gender" <?php if (isset($gender) && $gender=="other") echo "checked";?> value="other">Outro
-        <span class="error">* <?php echo $genderErr;?></span>
-        <br><br>
-        <input type="submit" name="submit" value="Submit">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:linear-gradient(135deg,#4facfe,#00f2fe);
+        }
+
+        .container{
+            width:420px;
+            background:rgba(255,255,255,.95);
+            padding:35px;
+            border-radius:20px;
+            box-shadow:0 10px 30px rgba(0,0,0,.25);
+        }
+
+        h2{
+            text-align:center;
+            margin-bottom:25px;
+            color:#333;
+        }
+
+        label{
+            display:block;
+            margin-bottom:6px;
+            margin-top:15px;
+            color:#444;
+            font-weight:bold;
+        }
+
+        input[type=text]{
+            width:100%;
+            padding:12px;
+            border:1px solid #ccc;
+            border-radius:10px;
+            font-size:15px;
+            transition:.3s;
+        }
+
+        input[type=text]:focus{
+            border-color:#4facfe;
+            outline:none;
+            box-shadow:0 0 10px rgba(79,172,254,.3);
+        }
+
+        .genero{
+            margin-top:10px;
+        }
+
+        .genero label{
+            display:inline;
+            font-weight:normal;
+            margin-right:15px;
+        }
+
+        .error{
+            color:#e63946;
+            font-size:13px;
+        }
+
+        input[type=submit]{
+            width:100%;
+            margin-top:25px;
+            padding:13px;
+            background:#4facfe;
+            color:white;
+            border:none;
+            border-radius:10px;
+            cursor:pointer;
+            font-size:17px;
+            transition:.3s;
+        }
+
+        input[type=submit]:hover{
+            background:#008cff;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Cadastro</h2>
+
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+
+        <label>Nome</label>
+        <input type="text" name="name" value="<?php echo $name; ?>">
+        <span class="error"><?php echo $nameErr; ?></span>
+
+        <label>E-mail</label>
+        <input type="text" name="email" value="<?php echo $email; ?>">
+        <span class="error"><?php echo $emailErr; ?></span>
+
+        <label>Telefone</label>
+        <input type="text" name="phone" value="<?php echo $phone; ?>">
+
+        <label>CPF</label>
+        <input type="text" name="cpf" value="<?php echo $CPF; ?>">
+        <span class="error"><?php echo $CPFErr; ?></span>
+
+        <label>Gênero</label>
+
+        <div class="genero">
+            <input type="radio" name="gender" value="female"
+                    <?php if($gender=="female") echo "checked"; ?>> Feminino
+
+            <input type="radio" name="gender" value="male"
+                    <?php if($gender=="male") echo "checked"; ?>> Masculino
+
+            <input type="radio" name="gender" value="other"
+                    <?php if($gender=="other") echo "checked"; ?>> Outro
+        </div>
+
+        <span class="error"><?php echo $genderErr; ?></span>
+
+        <input type="submit" value="Cadastrar">
+
     </form>
-    </body>
-    </html>
-<?php
-//  ANALISANDO O FORMULÁRIO ACIMA
 
-//  $_SERVER["PHP_SELF"] é uma variável super global que o nome do arquivo onde o script está sendo executado.
-//  A função htmlspecialchars() converte caracteres especiais em entidades. Isso significa que irá substituir caracteres como < e > em &lt; e &gt;. Isso impede que invasores explorem o código injetando código HTML ou Javascript.
+</div>
 
-//  VALIDAÇÃO DO CÓDIGO PHP
-//  1º PASSO
-//  Remover caracteres desnecessários (espaços extras, tabulações, novas linhas) dos dados de entrada do usuário com a função PHP trim()
-//  2º PASSO
-//  Remover barras invertidas \ dos dados de entrada do usuário com a função PHP stripslashes()
-
-
-?>
+</body>
+</html>

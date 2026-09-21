@@ -1,0 +1,774 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: #2468e8;
+    --blue-soft: #e7f1ff;
+    --hero: #eaf3ff;
+    --text: #101b2c;
+    --muted: #52647d;
+    --border: #d4e0f0;
+    --danger: #e92329;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: white;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.topbar {
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 26px;
+
+    padding: 0 8.5%;
+
+    border-bottom: 1px solid var(--border);
+
+    background: white;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 20;
+}
+
+
+.brand {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    color: var(--text);
+
+    text-decoration: none;
+
+    font-size: 17px;
+    font-weight: 750;
+
+    white-space: nowrap;
+}
+
+
+.brand-icon {
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+    place-items: center;
+
+    color: white;
+
+    background: var(--blue);
+
+    border-radius: 50%;
+
+    font-size: 23px;
+}
+
+
+/* MENU */
+
+.nav {
+    display: flex;
+    align-items: center;
+
+    gap: 4px;
+
+    flex: 1;
+}
+
+
+.nav a {
+    text-decoration: none;
+
+    color: #1b2535;
+
+    padding: 10px 13px;
+
+    border-radius: 24px;
+
+    font-size: 15px;
+
+    transition: 0.2s;
+}
+
+
+.nav a:hover,
+.nav a.active {
+    background: #dcecff;
+
+    color: #1d4fae;
+}
+
+
+/* =========================
+   PESQUISA
+========================= */
+
+.header-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.search {
+    width: 210px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 0 12px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 22px;
+
+    color: #6b7890;
+}
+
+
+.search input {
+    width: 100%;
+
+    border: 0;
+
+    outline: none;
+
+    font-size: 14px;
+}
+
+
+.circle-btn {
+    width: 38px;
+    height: 38px;
+
+    border: 1px solid var(--border);
+
+    background: white;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    font-size: 19px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 487px;
+
+    background: var(--hero);
+
+    display: flex;
+
+    align-items: center;
+
+    flex-direction: column;
+
+    text-align: center;
+
+    padding: 80px 20px 60px;
+}
+
+
+.badge {
+    background: white;
+
+    color: var(--blue);
+
+    border-radius: 25px;
+
+    padding: 10px 18px;
+
+    font-weight: 700;
+
+    font-size: 14px;
+}
+
+
+.hero h1 {
+    margin: 25px 0 10px;
+
+    font-size: 64px;
+
+    letter-spacing: -2.5px;
+}
+
+
+.hero p {
+    margin: 0;
+
+    color: #405a7b;
+
+    font-size: 20px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================
+   BOTÃO EMERGÊNCIA
+========================= */
+
+.emergency-btn {
+    margin-top: 34px;
+
+    width: 448px;
+    max-width: 100%;
+
+    padding: 21px 28px;
+
+    border-radius: 23px;
+
+    background: var(--danger);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 19px;
+
+    font-weight: 800;
+
+    box-shadow: 0 12px 22px rgba(233,35,41,.14);
+
+    transition: 0.2s;
+}
+
+
+.emergency-btn:hover {
+    transform: translateY(-2px);
+}
+
+
+.emergency-link {
+    border: 0;
+
+    background: transparent;
+
+    color: #1760dc;
+
+    text-decoration: underline;
+
+    margin-top: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.content,
+.page-content {
+    max-width: 940px;
+
+    margin: auto;
+
+    padding: 54px 0 80px;
+}
+
+
+.section-heading h2,
+.page-content h1 {
+    font-size: 30px;
+
+    margin: 0 0 8px;
+}
+
+
+.section-heading p,
+.page-intro {
+    color: var(--muted);
+
+    line-height: 1.65;
+
+    font-size: 15px;
+
+    margin-bottom: 27px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 16px;
+}
+
+
+.card {
+    border: 1px solid var(--border);
+
+    border-radius: 22px;
+
+    padding: 20px;
+
+    min-height: 213px;
+
+    background: white;
+
+    transition: 0.2s;
+}
+
+
+.card:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 10px 25px rgba(32,72,125,.08);
+}
+
+
+.card-icon {
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+    place-items: center;
+
+    background: #dceaff;
+
+    color: var(--blue);
+
+    border-radius: 50%;
+
+    font-size: 20px;
+}
+
+
+.card h3 {
+    font-size: 17px;
+
+    margin: 15px 0 9px;
+}
+
+
+.card p {
+    color: #50627c;
+
+    line-height: 1.65;
+
+    font-size: 14.5px;
+
+    margin: 0;
+}
+
+
+/* =========================
+   RECOMPENSA
+========================= */
+
+.reward {
+    margin-top: 26px;
+
+    padding: 20px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 22px;
+}
+
+
+.reward-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.reward-title h3 {
+    margin: 0 0 2px;
+}
+
+
+.reward-title p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+.days {
+    display: flex;
+
+    gap: 8px;
+
+    margin: 20px 0 13px;
+}
+
+
+.day {
+    width: 37px;
+    height: 37px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 50%;
+
+    display: grid;
+
+    place-items: center;
+
+    color: #a8b5c6;
+}
+
+
+.day.completed {
+    border-color: var(--blue);
+
+    color: var(--blue);
+
+    background: #eaf3ff;
+}
+
+
+.daily-btn {
+    border: 0;
+
+    color: var(--blue);
+
+    background: #edf5ff;
+
+    border-radius: 10px;
+
+    padding: 9px 14px;
+
+    cursor: pointer;
+
+    font-weight: 700;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================
+   PÁGINAS INTERNAS
+========================= */
+
+.page-content {
+    padding-top: 70px;
+}
+
+
+.page-content h1 {
+    font-size: 46px;
+
+    margin-top: 20px;
+}
+
+
+.page-intro {
+    max-width: 720px;
+
+    font-size: 17px;
+}
+
+
+.page-content .cards {
+    margin-top: 28px;
+}
+
+
+/* =========================
+   EMERGÊNCIA
+========================= */
+
+.emergency-panel {
+    margin-top: 24px;
+
+    padding: 20px;
+
+    border: 1px solid #f0c9cb;
+
+    border-radius: 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: #fff8f8;
+}
+
+
+.emergency-panel > div {
+    display: flex;
+
+    gap: 13px;
+
+    align-items: center;
+}
+
+
+.emergency-panel h2 {
+    font-size: 18px;
+
+    margin: 0 0 4px;
+}
+
+
+.emergency-panel p {
+    margin: 0;
+
+    color: var(--muted);
+}
+
+
+.panel-icon {
+    font-size: 28px;
+
+    color: var(--danger);
+}
+
+
+.small-emergency,
+.save-btn {
+    border: 0;
+
+    background: var(--danger);
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 11px 17px;
+
+    border-radius: 10px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+dialog {
+    border: 0;
+
+    border-radius: 20px;
+
+    padding: 0;
+
+    box-shadow: 0 20px 70px rgba(0,0,0,.2);
+
+    width: min(440px, 90%);
+}
+
+
+dialog::backdrop {
+    background: rgba(15,30,55,.35);
+}
+
+
+.modal {
+    padding: 28px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    position: relative;
+}
+
+
+.modal h2 {
+    margin: 0;
+}
+
+
+.modal p {
+    color: var(--muted);
+
+    line-height: 1.5;
+}
+
+
+.modal input {
+    padding: 13px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    outline: none;
+}
+
+
+.close {
+    position: absolute;
+
+    right: 16px;
+
+    top: 13px;
+
+    border: 0;
+
+    background: transparent;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+
+.success {
+    color: #23814a;
+}
+
+
+/* PESQUISA */
+
+.hidden-by-search {
+    display: none !important;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+    border-top: 1px solid var(--border);
+
+    text-align: center;
+
+    padding: 25px;
+
+    color: #728199;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 1050px) {
+
+    .topbar {
+        padding: 0 3%;
+
+        gap: 10px;
+    }
+
+    .content,
+    .page-content {
+        max-width: 90%;
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .topbar {
+        height: auto;
+
+        flex-wrap: wrap;
+
+        padding: 10px 4%;
+    }
+
+
+    .nav {
+        order: 3;
+
+        width: 100%;
+
+        overflow-x: auto;
+    }
+
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .search {
+        width: 130px;
+    }
+
+
+    .circle-btn {
+        display: none;
+    }
+
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+
+    .hero p {
+        font-size: 17px;
+    }
+
+
+    .emergency-btn {
+        font-size: 16px;
+    }
+
+
+    .content,
+    .page-content {
+        max-width: 92%;
+    }
+
+
+    .page-content h1 {
+        font-size: 38px;
+    }
+
+}
