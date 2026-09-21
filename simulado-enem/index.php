@@ -160,9 +160,378 @@ $questoes = [
         ],
         'correta' => 1,
         'explicacao' => 'Urbanização é o processo de crescimento da população e das atividades nas áreas urbanas.'
-    ]
+    ],
 
+    [
+        'id'=> 101,
+        'area' => 'Linguagens',
+        'materia' => 'Língua Portuguesa',
+        'prova' => 'ENEM',
+        'ano' => 2018,
+        'pergunta' => 'Em uma campanha de conscientização sobre o descarte correto de resíduos, um cartaz apresenta a frase: "O planeta não tem botão de reiniciar. Faça sua parte hoje." A principal estratégia utilizada no texto é:',
+        'alternativas' => [
+            'Apresentar uma informação científica sem intenção persuasiva.',
+            'Utilizar uma comparação para incentivar uma mudança de comportamento.',
+            'Relatar um acontecimento histórico relacionado ao meio ambiente.',
+            'Defender exclusivamente o uso de tecnologias digitais.',
+            'Descrever detalhadamente o funcionamento dos aterros sanitários.'
+        ],
+        'correta' => 1,
+        'explicacao' => 'A expressão \'botão de reiniciar\' faz uma comparação com recursos tecnológicos para reforçar a necessidade de agir no presente.'
+    ],
+
+    [
+        'id' => 102,
+        'area' => 'Linguagens',
+        'materia' => 'Literatura',
+        'prova' => 'ENEM',
+        'ano' => 2020,
+        'pergunta' => 'Um poema apresenta linguagem cotidiana, versos livres e referências a situações comuns da vida urbana. Essas características estão relacionadas principalmente à:',
+        'alternativas' => [
+            'Valorização exclusiva da métrica clássica.',
+            'Retomada obrigatória dos modelos greco-romanos.',
+            'Experimentação estética e aproximação entre literatura e cotidiano.',
+            'Eliminação de qualquer elemento da realidade social.',
+            'Utilização exclusiva de linguagem científica.'
+        ],
+        'correta' => 2,
+        'explicacao' => 'A aproximação com a linguagem cotidiana e a liberdade formal são características associadas à experimentação estética da literatura moderna.'
+    ],
+
+    [
+        'id' => 103,
+        'area' => 'Linguagens',
+        'materia' => 'Publicidade',
+        'prova' => 'ENEM',
+        'ano' => 2022,
+        'imagem' => 'imagens/linguagens_campanha_2022.svg',
+        'pergunta' => 'Uma campanha publicitária apresenta a imagem de uma torneira da qual saem folhas de árvores em vez de água, acompanhada da frase \'Cada gota conta\'. A combinação entre imagem e texto busca:',
+        'alternativas' => [
+            'Mostrar uma característica natural das árvores.',
+            'Estimular a reflexão sobre o desperdício de água.',
+            'Divulgar equipamentos hidráulicos.',
+            'Explicar o processo de fotossíntese.',
+            'Defender o aumento do consumo de água.'
+        ],
+        'correta' => 1,
+        'explicacao' => 'A associação visual entre a torneira e as folhas cria uma mensagem simbólica para chamar atenção à preservação dos recursos naturais.'
+    ],
+
+    [
+        'id' => 104,
+        'area' => 'Linguagens',
+        'materia' => 'Variação Linguística',
+        'prova' => 'ENEM',
+        'ano' => 2023,
+        'pergunta' => 'Em uma conversa entre personagens de diferentes regiões brasileiras, aparecem expressões próprias de cada localidade. Considerando os estudos da linguagem, essas diferenças demonstram que:',
+        'alternativas' => [
+            'Existe apenas uma forma correta de falar português em qualquer situação.',
+            'As variedades linguísticas podem estar relacionadas a fatores regionais e sociais.',
+            'As diferenças regionais impedem a comunicação entre os falantes.',
+            'A linguagem informal não possui regras de organização.',
+            'Todas as variedades linguísticas devem ser eliminadas.'
+        ],
+        'correta' => 1,
+        'explicacao' => 'A língua apresenta variações relacionadas à região, grupo social, situação comunicativa e outros fatores.'
+    ],
+
+    [
+        'id' => 105,
+        'area' => 'Linguagens',
+        'materia' => 'Artes',
+        'prova' => 'ENEM',
+        'ano' => 2025,
+        'imagem' => 'imagens/linguagens_grafite_2025.svg',
+        'pergunta' => 'Um muro urbano apresenta um grande grafite que combina figuras humanas, elementos da natureza e palavras relacionadas à identidade cultural. A utilização desse espaço público como suporte artístico evidencia:',
+        'alternativas' => [
+            'A separação obrigatória entre arte e sociedade.',
+            'A utilização da arte como forma de expressão cultural e ocupação do espaço urbano.',
+            'A necessidade de limitar a arte aos museus.',
+            'A ausência de comunicação nas manifestações visuais.',
+            'A substituição da arte por mensagens exclusivamente comerciais.'
+        ],
+        'correta' => 1,
+        'explicacao' => 'O grafite pode funcionar como manifestação artística e cultural, utilizando o espaço urbano para comunicar ideias e identidades.'
+    ],
+
+    [
+        'id' => 106,
+        'area' => 'Matemática',
+        'materia' => 'Porcentagem',
+        'prova' => 'ENEM',
+        'ano' => 2019,
+        'pergunta' => 'Uma estudante encontrou uma mochila que custava R$ 180,00 e estava sendo vendida com desconto de 25%. Qual era o preço da mochila após o desconto?',
+        'alternativas' => [
+            'R$ 125,00',
+            'R$ 130,00',
+            'R$ 135,00',
+            'R$ 140,00',
+            'R$ 145,00'
+        ],
+        'correta' => 2,
+        'explicacao' => '25% de R$ 180,00 corresponde a R$ 45,00. Assim, R$ 180,00 - R$ 45,00 = R$ 135,00.'
+    ],
+
+    [
+        'id' => 107,
+        'area' => 'Matemática',
+        'materia' => 'Geometria',
+        'prova' => 'ENEM',
+        'ano' => 2021,
+        'imagem' => 'imagens/matematica_area_2021.svg',
+        'pergunta' => 'Uma praça retangular possui 18 metros de comprimento e 12 metros de largura. No centro será construída uma área quadrada de lado 6 metros. Qual será a área restante da praça?',
+        'alternativas' => [
+            '144 m²',
+            '168 m²',
+            '180 m²',
+            '192 m²',
+            '216 m²'
+        ],
+        'correta' => 3,
+        'explicacao' => 'A área da praça é 18 × 12 = 216 m². A área quadrada é 6 × 6 = 36 m². Portanto, 216 - 36 = 180 m².'
+    ],
+
+    [
+        'id' => 108,
+        'area' => 'Matemática',
+        'materia' => 'Estatística',
+        'prova' => 'ENEM',
+        'ano' => 2022,
+        'pergunta' => 'As notas de cinco estudantes em uma atividade foram 6, 8, 7, 9 e 10. Qual é a média aritmética dessas notas?',
+        'alternativas' => [
+            '7',
+            '7,5',
+            '8',
+            '8,5',
+            '9'
+        ],
+        'correta' => 2,
+        'explicacao' => 'A soma das notas é 40. Dividindo por 5 estudantes, obtém-se média igual a 8.'
+    ],
+
+    [
+        'id' => 109,
+        'area' => 'Matemática',
+        'materia' => 'Funções',
+        'prova' => 'ENEM',
+        'ano' => 2024,
+        'pergunta' => 'Uma empresa de transporte cobra uma tarifa fixa de R$ 5,00 mais R$ 2,00 por quilômetro percorrido. Qual expressão representa o preço P de uma viagem de x quilômetros?',
+        'alternativas' => [
+            'P(x) = 5x + 2',
+            'P(x) = 2x + 5',
+            'P(x) = 7x',
+            'P(x) = x + 10',
+            'P(x) = 5x - 2'
+        ],
+        'correta' => 1,
+        'explicacao' => 'A tarifa fixa corresponde a 5 e o valor variável corresponde a 2 por quilômetro. Logo, P(x) = 2x + 5.'
+    ],
+
+    [
+        'id' => 110,
+        'area' => 'Matemática',
+        'materia' => 'Probabilidade',
+        'prova' => 'ENEM',
+        'ano' => 2025,
+        'imagem' => 'imagens/matematica_probabilidade_2025.svg',
+        'pergunta' => 'Uma caixa contém 3 bolas azuis, 2 bolas verdes e 5 bolas amarelas. Uma bola é retirada ao acaso. Qual é a probabilidade de ela ser verde?',
+        'alternativas' => [
+            '10%',
+            '15%',
+            '20%',
+            '25%',
+            '30%'
+        ],
+        'correta' => 2,
+        'explicacao' => 'Há 10 bolas no total e 2 são verdes. Portanto, a probabilidade é 2/10 = 20%.'
+    ],
+
+    [
+        'id' => 111,
+        'area' => 'Ciências da Natureza',
+        'materia' => 'Biologia',
+        'prova' => 'ENEM',
+        'ano' => 2018,
+        'pergunta' => 'Em um ecossistema, organismos produtores são importantes porque:',
+        'alternativas' => [
+            'Obtêm energia alimentando-se de outros animais.',
+            'Produzem matéria orgânica a partir de substâncias inorgânicas.',
+            'Eliminam todos os decompositores do ambiente.',
+            'Impedem a circulação de matéria no ecossistema.',
+            'Alimentam-se exclusivamente de matéria orgânica.'
+        ],
+        'correta' => 1,
+        'explicacao' => 'Os produtores, como as plantas, produzem matéria orgânica utilizando energia luminosa ou química.'
+    ],
+
+    [
+        'id' => 112,
+        'area' => 'Ciências da Natureza',
+        'materia' => 'Física',
+        'prova' => 'ENEM',
+        'ano' => 2020,
+        'imagem' => 'imagens/fisica_energia_solar_2020.svg',
+        'pergunta' => 'Um painel solar transforma a energia proveniente da radiação solar principalmente em:',
+        'alternativas' => [
+            'Energia elétrica.',
+            'Energia sonora.',
+            'Energia nuclear.',
+            'Energia gravitacional.',
+            'Energia mecânica diretamente.'
+        ],
+        'correta' => 0,
+        'explicacao' => 'Painéis fotovoltaicos utilizam a radiação solar para produzir energia elétrica por meio do efeito fotovoltaico.'
+    ],
+
+    [
+        'id' => 113,
+        'area' => 'Ciências da Natureza',
+        'materia' => 'Química',
+        'prova' => 'ENEM',
+        'ano' => 2021,
+        'pergunta' => 'Uma solução apresenta pH igual a 3. Comparada a uma solução de pH 6, ela apresenta:',
+        'alternativas' => [
+            'Menor acidez.',
+            'Maior acidez.',
+            'A mesma acidez.',
+            'Maior basicidade.',
+            'Ausência de íons.'
+        ],
+        'correta' => 1,
+        'explicacao' => 'Quanto menor o valor de pH, maior é a acidez da solução. Portanto, pH 3 indica maior acidez que pH 6.'
+    ],
+
+    [
+        'id' => 114,
+        'area' => 'Ciências da Natureza',
+        'materia' => 'Ecologia',
+        'prova' => 'ENEM',
+        'ano' => 2023,
+        'imagem' => 'imagens/ecologia_cadeia_2023.svg',
+        'pergunta' => 'Observe a representação de uma cadeia alimentar formada por capim, gafanhoto, sapo e cobra. Nessa cadeia, o gafanhoto ocupa o nível de:',
+        'alternativas' => [
+            'Produtor.',
+            'Consumidor primário.',
+            'Consumidor secundário.',
+            'Consumidor terciário.',
+            'Decompositor.'
+        ],
+        'correta' => 1,
+        'explicacao' => 'O gafanhoto alimenta-se diretamente do produtor, o capim. Por isso, é classificado como consumidor primário.'
+    ],
+
+    [
+        'id' => 115,
+        'area' => 'Ciências da Natureza',
+        'materia' => 'Física',
+        'prova' => 'ENEM',
+        'ano' => 2024,
+        'pergunta' => 'Um automóvel percorre 120 km em 2 horas, mantendo velocidade média constante. Qual é sua velocidade média?',
+        'alternativas' => [
+            '40 km/h',
+            '50 km/h',
+            '60 km/h',
+            '80 km/h',
+            '120 km/h'
+        ],
+        'correta' => 2,
+        'explicacao' => 'A velocidade média é calculada dividindo a distância pelo tempo: 120 ÷ 2 = 60 km/h.'
+    ],
+
+    [
+        'id' => 116,
+        'area' => 'Ciências Humanas',
+        'materia' => 'História',
+        'prova' => 'ENEM',
+        'ano' => 2019,
+        'pergunta' => 'A Revolução Industrial contribuiu para importantes transformações nas relações de trabalho. Entre elas está:',
+        'alternativas' => [
+            'A expansão do trabalho assalariado nas cidades.',
+            'O desaparecimento das fábricas.',
+            'A redução da produção em larga escala.',
+            'O fim das atividades comerciais.',
+            'A eliminação da divisão do trabalho.'
+        ],
+        'correta' => 0,
+        'explicacao' => 'A industrialização ampliou a produção fabril e contribuiu para a expansão do trabalho assalariado urbano.'
+    ],
+
+    [
+        'id' => 117,
+        'area' => 'Ciências Humanas',
+        'materia' => 'Geografia',
+        'prova' => 'ENEM',
+        'ano' => 2020,
+        'imagem' => 'imagens/geografia_urbanizacao_2020.svg',
+        'pergunta' => 'Um mapa apresenta a expansão de uma área urbana ao longo de três décadas, mostrando a substituição de áreas rurais por bairros residenciais. Esse processo está relacionado principalmente à:',
+        'alternativas' => [
+            'Desertificação.',
+            'Urbanização.',
+            'Glaciação.',
+            'Erosão marinha.',
+            'Ruralização.'
+        ],
+        'correta' => 1,
+        'explicacao' => 'A expansão das cidades sobre áreas anteriormente rurais é uma manifestação do processo de urbanização.'
+    ],
+
+    [
+        'id' => 118,
+        'area' => 'Ciências Humanas',
+        'materia' => 'Sociologia',
+        'prova' => 'ENEM',
+        'ano' => 2022,
+        'pergunta' => 'A socialização pode ser compreendida como o processo pelo qual os indivíduos:',
+        'alternativas' => [
+            'Vivem isolados das normas sociais.',
+            'Aprendem valores, normas e práticas de uma sociedade.',
+            'Deixam de participar de grupos sociais.',
+            'Rejeitam qualquer influência cultural.',
+            'Abandonam completamente suas identidades.'
+        ],
+        'correta' => 1,
+        'explicacao' => 'A socialização envolve a aprendizagem de normas, valores, comportamentos e práticas presentes nos grupos e sociedades.'
+    ],
+
+    [
+        'id' => 119,
+        'area' => 'Ciências Humanas',
+        'materia' => 'Filosofia',
+        'prova' => 'ENEM',
+        'ano' => 2023,
+        'pergunta' => 'O pensamento filosófico caracteriza-se, entre outros aspectos, pela busca de:',
+        'alternativas' => [
+            'Respostas baseadas exclusivamente em tradições.',
+            'Questionamento crítico e reflexão racional sobre diferentes problemas.',
+            'Eliminação de qualquer dúvida.',
+            'Aceitação obrigatória de uma única explicação.',
+            'Substituição da argumentação por opiniões sem justificativa.'
+        ],
+        'correta' => 1,
+        'explicacao' => 'A filosofia envolve questionamento, reflexão crítica e construção de argumentos para analisar problemas e conceitos.'
+    ],
+
+    [
+        'id' => 120,
+        'area' => 'Ciências Humanas',
+        'materia' => 'Geopolítica',
+        'prova' => 'ENEM',
+        'ano' => 2025,
+        'imagem' => 'imagens/geopolitica_migracao_2025.svg',
+        'pergunta' => 'Um mapa apresenta fluxos migratórios internacionais entre diferentes regiões do mundo. Esses deslocamentos podem estar relacionados a fatores econômicos, políticos e ambientais. Nesse contexto, a migração pode ser entendida como:',
+        'alternativas' => [
+            'Um fenômeno exclusivamente provocado por motivos turísticos.',
+            'Um deslocamento populacional que pode possuir diferentes causas.',
+            'Um processo que ocorre somente dentro de uma mesma cidade.',
+            'Um fenômeno sem relação com condições econômicas.',
+            'Um movimento restrito às áreas rurais.'
+        ],
+        'correta' => 1,
+        'explicacao' => 'Os fluxos migratórios podem ocorrer por diversas razões, como oportunidades econômicas, conflitos, perseguições, desastres ambientais e condições sociais.'
+    ],
 ];
+
+
 
 /* =========================================================
    FUNÇÕES
