@@ -1,5 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap');
+
+
+/* ======================================================
+   FONTE DO FOOTER
+====================================================== */
+
+.footer,
+.footer * {
+    font-family: 'Nunito', sans-serif !important;
+}
+
+
+/* TÍTULO FERRAMENTAS */
+.footer-ferramentas-conteudo strong {
+    font-family: 'Nunito', sans-serif !important;
+    font-size: 17px !important;
+    font-weight: 800 !important;
+}
+
+
+/* LINKS DAS FERRAMENTAS */
+.footer-ferramentas-conteudo a {
+    font-family: 'Nunito', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+}
+
+
+/* TEXTO DA ESCOLA */
+.footer-dados strong,
+.footer-dados span,
+.footer-dados b,
+.footer-dados a {
+    font-family: 'Nunito', sans-serif !important;
+}
+
+
+/* AUTORIA */
+.footer-autoria,
+.footer-autoria a {
+    font-family: 'Nunito', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+}
+
 :root {
 
     --verde: #c9ff35;
@@ -2137,8 +2183,7 @@ RESPONSIVO
 
     .header {
 
-        padding:
-                0 20px;
+        padding: 0 20px;
     }
 
 
@@ -2170,8 +2215,7 @@ RESPONSIVO
 
     .cta {
 
-        margin:
-                40px 20px;
+        margin: 40px 20px;
 
         padding: 40px 25px;
     }
@@ -2185,8 +2229,7 @@ RESPONSIVO
 
     .pagina {
 
-        padding:
-                50px 20px;
+        padding: 50px 20px;
     }
 
 
@@ -2238,11 +2281,1701 @@ RESPONSIVO
     }
 
 
-    footer {
+    /* ======================================================
+     FOOTER
+     BASEADO DIRETAMENTE NO LAYOUT DA IMAGEM
+  ======================================================= */
+
+    .footer {
+        width: 100%;
+        height: 126px;
+
+        position: relative;
+
+        background: #371348;
+
+        margin: 0;
+        padding: 0;
+
+        box-sizing: border-box;
+
+        color: #ffffff;
+
+        overflow: hidden;
+    }
+
+
+    /* ======================================================
+       FAIXA VERDE SUPERIOR
+    ======================================================= */
+
+    .footer-topo {
+        position: absolute;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 15px;
+
+        background: #C9FF35FF;
+    }
+
+
+    /* ======================================================
+       CONTEÚDO
+    ======================================================= */
+
+    .footer-conteudo {
+        position: absolute;
+
+        top: 15px;
+        left: 0;
+
+        width: 100%;
+        height: 111px;
+
+        box-sizing: border-box;
+    }
+
+
+    /* ======================================================
+       ESCOLA
+    ======================================================= */
+
+    .footer-escola {
+        position: absolute;
+
+        left: 16px;
+        top: 21px;
+
+        height: 65px;
+
+        display: flex;
+        align-items: center;
+
+        gap: 10px;
+    }
+
+
+    /* ======================================================
+       LOGO DA ESCOLA
+    ======================================================= */
+
+    .footer-logo-escola {
+        width: 61px;
+        height: 61px;
+
+        flex-shrink: 0;
+
+        background: #ffffff;
+
+        border-radius: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        overflow: hidden;
+    }
+
+    .footer-logo-escola img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: contain;
+
+        display: block;
+    }
+
+
+    /* ======================================================
+       DADOS DA ESCOLA
+    ======================================================= */
+
+    .footer-dados {
+        height: 61px;
+
+        display: flex;
+        flex-direction: column;
+
+        justify-content: flex-start;
+
+        line-height: 1;
+    }
+
+    .footer-dados strong {
+        display: block;
+
+        margin-top: 2px;
+        margin-bottom: 2px;
+
+        color: #C9FF35FF;
+
+        font-family: Arial, sans-serif;
+
+        font-size: 13px;
+        font-weight: 800;
+
+        white-space: nowrap;
+    }
+
+    .footer-dados span {
+        display: block;
+
+        color: #ffffff;
+
+        font-family: Arial, sans-serif;
+
+        font-size: 9px;
+        font-weight: 700;
+
+        line-height: 11px;
+
+        white-space: nowrap;
+    }
+
+    .footer-dados b {
+        display: block;
+
+        margin-top: 3px;
+
+        color: #C9FF35FF;
+
+        font-family: Arial, sans-serif;
+
+        font-size: 11px;
+        font-weight: 800;
+
+        line-height: 11px;
+    }
+
+    .footer-dados a {
+        color: #ffffff;
+
+        font-family: Arial, sans-serif;
+
+        font-size: 9px;
+        font-weight: 700;
+
+        line-height: 11px;
+
+        text-decoration: underline;
+
+        white-space: nowrap;
+    }
+
+
+    /* ======================================================
+       FERRAMENTAS
+    ======================================================= */
+
+    .footer-ferramentas {
+        position: absolute;
+
+        left: 46.5%;
+        top: 27px;
+
+        height: 48px;
+
+        display: flex;
+        align-items: stretch;
+    }
+
+
+    /* LINHA VERTICAL */
+
+    .footer-linha {
+        width: 2px;
+
+        height: 45px;
+
+        background: #C9FF35FF;
+
+        margin-right: 8px;
+    }
+
+
+    /* CONTEÚDO */
+
+    .footer-ferramentas-conteudo {
+        display: flex;
 
         flex-direction: column;
 
-        text-align: center;
+        justify-content: flex-start;
+
+        line-height: 1;
+    }
+
+    .footer-ferramentas-conteudo strong {
+        color: #C9FF35FF;
+
+        font-family: Arial, sans-serif;
+
+        font-size: 13px;
+        font-weight: 800;
+
+        line-height: 13px;
+
+        margin-bottom: 1px;
+    }
+
+    .footer-ferramentas-conteudo a {
+        color: #ffffff;
+
+        font-family: Arial, sans-serif;
+
+        font-size: 10px;
+        font-weight: 700;
+
+        line-height: 11px;
+
+        text-decoration: none;
+
+        white-space: nowrap;
+    }
+
+    .footer-ferramentas-conteudo a:hover {
+        color: #C9FF35FF;
+    }
+
+
+    /* ======================================================
+       AUTORIA DAS ALUNAS
+    ======================================================= */
+
+    .footer-autoria {
+        position: absolute;
+
+        left: 46.5%;
+        bottom: 4px;
+
+        width: 260px;
+
+        color: #ffffff;
+
+        font-family: Arial, sans-serif;
+
+        font-size: 7px;
+        font-weight: 600;
+
+        line-height: 9px;
+
+        white-space: nowrap;
+    }
+
+    .footer-autoria a {
+        color: #ffffff;
+
+        font-weight: 800;
+
+        text-decoration: underline;
+    }
+
+    .footer-autoria a:hover {
+        color: #C9FF35FF;
+    }
+
+
+    /* ======================================================
+       LOGOS DIREITA
+    ======================================================= */
+
+    .footer-logos {
+        position: absolute;
+
+        right: 16px;
+        top: 34px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 7px;
+    }
+
+
+    /* CÍRCULOS */
+
+    .footer-logo-link {
+        width: 40px;
+        height: 40px;
+
+        background: #ffffff;
+
+        border-radius: 50%;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        overflow: hidden;
+
+        flex-shrink: 0;
+
+        text-decoration: none;
+
+        transition: transform 0.2s ease;
+    }
+
+    .footer-logo-link:hover {
+        transform: scale(1.05);
+    }
+
+
+    /* IMAGENS */
+
+    .footer-logo-link img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: contain;
+
+        display: block;
+    }
+
+
+    /* ======================================================
+       RESPONSIVIDADE
+    ======================================================= */
+
+    @media (max-width: 900px) {
+
+        .footer {
+            height: 155px;
+        }
+
+        .footer-conteudo {
+            height: 140px;
+        }
+
+        .footer-autoria {
+            left: 16px;
+            bottom: 5px;
+
+            width: calc(100% - 32px);
+
+            white-space: normal;
+        }
+
+    }
+
+
+    @media (max-width: 650px) {
+
+        .footer {
+            height: auto;
+            min-height: 310px;
+
+            overflow: visible;
+        }
+
+        .footer-conteudo {
+            position: relative;
+
+            top: 15px;
+
+            height: 295px;
+
+            display: block;
+        }
+
+        .footer-escola {
+            left: 16px;
+            top: 18px;
+        }
+
+        .footer-ferramentas {
+            left: 16px;
+            top: 100px;
+        }
+
+        .footer-autoria {
+            left: 16px;
+            bottom: auto;
+            top: 175px;
+
+            width: calc(100% - 32px);
+
+            white-space: normal;
+
+            font-size: 9px;
+            line-height: 13px;
+        }
+
+        .footer-logos {
+            left: 16px;
+            right: auto;
+            top: 225px;
+        }
+
+    }
+}
+
+/* ======================================================
+   FOOTER
+   BASEADO DIRETAMENTE NO LAYOUT DA IMAGEM
+======================================================= */
+
+.footer {
+    width: 100%;
+    height: 126px;
+
+    position: relative;
+
+    background: #371348FF;
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    color: #ffffff;
+
+    overflow: hidden;
+}
+
+
+/* ======================================================
+   FAIXA VERDE SUPERIOR
+======================================================= */
+
+.footer-topo {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 15px;
+
+    background: #C9FF35FF;
+}
+
+
+/* ======================================================
+   CONTEÚDO
+======================================================= */
+
+.footer-conteudo {
+    position: absolute;
+
+    top: 15px;
+    left: 0;
+
+    width: 100%;
+    height: 111px;
+
+    box-sizing: border-box;
+}
+
+
+/* ======================================================
+   ESCOLA
+======================================================= */
+
+.footer-escola {
+    position: absolute;
+
+    left: 16px;
+    top: 21px;
+
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+/* ======================================================
+   LOGO DA ESCOLA
+======================================================= */
+
+.footer-logo-escola {
+    width: 61px;
+    height: 61px;
+
+    flex-shrink: 0;
+
+    background: #ffffff;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.footer-logo-escola img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* ======================================================
+   DADOS DA ESCOLA
+======================================================= */
+
+.footer-dados {
+    height: 61px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start;
+
+    line-height: 1;
+}
+
+.footer-dados strong {
+    display: block;
+
+    margin-top: 2px;
+    margin-bottom: 2px;
+
+    color: #C9FF35FF;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+.footer-dados span {
+    display: block;
+
+    color: #ffffff;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    line-height: 11px;
+
+    white-space: nowrap;
+}
+
+.footer-dados b {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #C9FF35FF;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    line-height: 11px;
+}
+
+.footer-dados a {
+    color: #ffffff;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    line-height: 11px;
+
+    text-decoration: underline;
+
+    white-space: nowrap;
+}
+
+
+/* ======================================================
+   FERRAMENTAS
+======================================================= */
+
+.footer-ferramentas {
+    position: absolute;
+
+    left: 46.5%;
+    top: 27px;
+
+    height: 48px;
+
+    display: flex;
+    align-items: stretch;
+}
+
+
+/* LINHA VERTICAL */
+
+.footer-linha {
+    width: 2px;
+
+    height: 45px;
+
+    background: #C9FF35FF;
+
+    margin-right: 8px;
+}
+
+
+/* CONTEÚDO */
+
+.footer-ferramentas-conteudo {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-start;
+
+    line-height: 1;
+}
+
+.footer-ferramentas-conteudo strong {
+    color: #C9FF35FF;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    line-height: 13px;
+
+    margin-bottom: 1px;
+}
+
+.footer-ferramentas-conteudo a {
+    color: #ffffff;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    line-height: 11px;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+}
+
+.footer-ferramentas-conteudo a:hover {
+    color: #C9FF35FF;
+}
+
+
+/* ======================================================
+   AUTORIA DAS ALUNAS
+======================================================= */
+
+.footer-autoria {
+    position: absolute;
+
+    left: 46.5%;
+    bottom: 4px;
+
+    width: 260px;
+
+    color: #ffffff;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 7px;
+    font-weight: 600;
+
+    line-height: 9px;
+
+    white-space: nowrap;
+}
+
+.footer-autoria a {
+    color: #ffffff;
+
+    font-weight: 800;
+
+    text-decoration: underline;
+}
+
+.footer-autoria a:hover {
+    color: #C9FF35FF;
+}
+
+
+/* ======================================================
+   LOGOS DIREITA
+======================================================= */
+
+.footer-logos {
+    position: absolute;
+
+    right: 16px;
+    top: 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+
+/* CÍRCULOS */
+
+.footer-logo-link {
+    width: 40px;
+    height: 40px;
+
+    background: #ffffff;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+
+    text-decoration: none;
+
+    transition: transform 0.2s ease;
+}
+
+.footer-logo-link:hover {
+    transform: scale(1.05);
+}
+
+
+/* IMAGENS */
+
+.footer-logo-link img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* ======================================================
+   RESPONSIVIDADE
+======================================================= */
+
+@media (max-width: 900px) {
+
+    .footer {
+        height: 155px;
+    }
+
+    .footer-conteudo {
+        height: 140px;
+    }
+
+    .footer-autoria {
+        left: 16px;
+        bottom: 5px;
+
+        width: calc(100% - 32px);
+
+        white-space: normal;
     }
 
 }
+
+
+@media (max-width: 650px) {
+
+    .footer {
+        height: auto;
+        min-height: 310px;
+
+        overflow: visible;
+    }
+
+    .footer-conteudo {
+        position: relative;
+
+        top: 15px;
+
+        height: 295px;
+
+        display: block;
+    }
+
+    .footer-escola {
+        left: 16px;
+        top: 18px;
+    }
+
+    .footer-ferramentas {
+        left: 16px;
+        top: 100px;
+    }
+
+    .footer-autoria {
+        left: 16px;
+        bottom: auto;
+        top: 175px;
+
+        width: calc(100% - 32px);
+
+        white-space: normal;
+
+        font-size: 9px;
+        line-height: 13px;
+    }
+
+    .footer-logos {
+        left: 16px;
+        right: auto;
+        top: 225px;
+    }
+
+}
+
+/* ======================================================
+   HEADER — IGUAL À REFERÊNCIA
+====================================================== */
+
+.header {
+    width: 100%;
+    height: 90px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+
+    background: #ffffff;
+
+    border-top: 8px solid #403b4c;
+    border-bottom: 1px solid #e8e8e8;
+
+    padding: 0 6%;
+
+    gap: 14px;
+
+    position: relative;
+
+    z-index: 100;
+}
+
+
+/* ======================================================
+   LOGO DA ESCOLA
+====================================================== */
+
+.header .logo-escola-header {
+    width: 45px !important;
+    height: 45px !important;
+
+    min-width: 45px !important;
+    max-width: 45px !important;
+
+    min-height: 45px !important;
+    max-height: 45px !important;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    margin: 0 4px 0 0 !important;
+    padding: 0 !important;
+
+    background: transparent;
+
+    border-radius: 0;
+
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+
+    overflow: hidden;
+}
+
+.header .logo-escola-header img {
+    width: 45px !important;
+    height: 45px !important;
+
+    min-width: 45px !important;
+    max-width: 45px !important;
+
+    min-height: 45px !important;
+    max-height: 45px !important;
+
+    object-fit: contain !important;
+
+    display: block !important;
+}
+
+
+/* ======================================================
+   ESTUDAÍ
+====================================================== */
+
+.header .logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+
+    margin: 0;
+}
+
+.header .logo-icon {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #b8ff20;
+
+    border-radius: 12px;
+
+    color: #43132e;
+
+    font-size: 25px;
+    font-weight: 900;
+
+    line-height: 1;
+}
+
+.header .logo strong {
+    display: block;
+
+    margin: 0;
+
+    color: #32143f;
+
+    font-size: 22px;
+    font-weight: 800;
+
+    line-height: 22px;
+}
+
+.header .logo span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #77727a;
+
+    font-size: 8px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    line-height: 9px;
+}
+
+
+/* ======================================================
+   MENU
+====================================================== */
+
+.header nav {
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 34px;
+
+    margin: 0;
+}
+
+.header nav a {
+    color: #77727a;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    transition: 0.2s ease;
+}
+
+.header nav a:hover {
+    color: #572276;
+}
+
+.header nav a.ativo {
+    color: #572276;
+}
+
+
+/* ======================================================
+   DIREITA
+====================================================== */
+
+.header .header-direita {
+    margin-left: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+/* ======================================================
+   ENTRAR
+====================================================== */
+
+.header .btn-login {
+    color: #572276;
+
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 800;
+
+    padding: 10px 2px;
+
+    white-space: nowrap;
+}
+
+
+/* ======================================================
+   CRIAR CONTA
+====================================================== */
+
+.header .btn-cadastro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 46px;
+
+    padding: 0 22px;
+
+    box-sizing: border-box;
+
+    background: #572276;
+
+    color: #ffffff;
+
+    border-radius: 13px;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    white-space: nowrap;
+
+    transition: 0.2s ease;
+}
+
+.header .btn-cadastro:hover {
+    background: #43175d;
+
+    transform: translateY(-1px);
+}
+
+
+/* ======================================================
+   USUÁRIO LOGADO
+====================================================== */
+
+.header .usuario {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #572276;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.header .avatar {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #b8ff20;
+
+    color: #43132e;
+
+    border-radius: 50%;
+
+    font-weight: 900;
+}
+
+
+/* ======================================================
+   TABLET
+====================================================== */
+
+@media (max-width: 1000px) {
+
+    .header {
+        padding: 0 30px;
+    }
+
+    .header nav {
+        gap: 18px;
+    }
+
+    .header nav a {
+        font-size: 13px;
+    }
+
+}
+
+
+/* ======================================================
+   CELULAR
+====================================================== */
+
+@media (max-width: 750px) {
+
+    .header {
+        height: auto;
+        min-height: 90px;
+
+        padding: 12px 20px;
+
+        flex-wrap: wrap;
+    }
+
+    .header nav {
+        position: static;
+
+        transform: none;
+
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 18px;
+
+        padding-top: 5px;
+    }
+
+    .header nav a {
+        font-size: 12px;
+    }
+
+    .header .header-direita {
+        margin-left: auto;
+    }
+
+}
+
+
+/* ======================================================
+   CELULAR PEQUENO
+====================================================== */
+
+@media (max-width: 500px) {
+
+    .header .logo-escola-header,
+    .header .logo-escola-header img {
+        width: 38px !important;
+        height: 38px !important;
+        min-width: 38px !important;
+        min-height: 38px !important;
+        max-width: 38px !important;
+        max-height: 38px !important;
+    }
+
+    .header .logo-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .header .logo strong {
+        font-size: 19px;
+    }
+
+    .header .logo span {
+        font-size: 7px;
+    }
+
+    .header .btn-cadastro {
+        padding: 0 14px;
+        height: 40px;
+        font-size: 13px;
+    }
+
+}
+
+/* ======================================================
+   AJUSTE FINAL DO FOOTER
+====================================================== */
+
+.footer {
+    height: 155px !important;
+    min-height: 155px !important;
+}
+
+/* aumenta e posiciona melhor o conteúdo */
+.footer-conteudo {
+    height: 140px !important;
+}
+
+/* logo da escola */
+.footer-logo-escola {
+    width: 64px !important;
+    height: 64px !important;
+}
+
+.footer-logo-escola img {
+    width: 64px !important;
+    height: 64px !important;
+}
+
+/* informações da escola */
+.footer-escola {
+    top: 18px !important;
+}
+
+.footer-dados strong {
+    font-size: 14px !important;
+}
+
+.footer-dados span {
+    font-size: 10px !important;
+}
+
+.footer-dados b {
+    font-size: 12px !important;
+}
+
+.footer-dados a {
+    font-size: 10px !important;
+}
+
+
+/* ferramentas */
+.footer-ferramentas {
+    top: 25px !important;
+}
+
+.footer-ferramentas-conteudo strong {
+    font-size: 14px !important;
+}
+
+.footer-ferramentas-conteudo a {
+    font-size: 11px !important;
+    line-height: 12px !important;
+}
+
+
+/* ======================================================
+   NOMES DAS ALUNAS
+   SEM SUBLINHADO / SEM HOVER
+====================================================== */
+
+.footer-autoria a {
+    color: #ffffff !important;
+
+    text-decoration: none !important;
+
+    border: none !important;
+
+    box-shadow: none !important;
+
+    transition: none !important;
+}
+
+.footer-autoria a:hover,
+.footer-autoria a:focus,
+.footer-autoria a:active {
+    color: #ffffff !important;
+
+    text-decoration: none !important;
+
+    transform: none !important;
+
+    border: none !important;
+
+    box-shadow: none !important;
+}
+
+
+/* autoria maior e mais visível */
+.footer-autoria {
+    bottom: 8px !important;
+
+    font-size: 9px !important;
+
+    line-height: 12px !important;
+}
+
+
+/* ======================================================
+   LOGOS DA DIREITA
+====================================================== */
+
+.footer-logos {
+    top: 32px !important;
+
+    gap: 9px !important;
+}
+
+.footer-logo-link {
+    width: 45px !important;
+    height: 45px !important;
+}
+
+/* ======================================================
+   LETRAS DO FOOTER - MAIORES E LEGÍVEIS
+====================================================== */
+
+.footer-dados strong {
+    font-size: 16px !important;
+    line-height: 18px !important;
+}
+
+.footer-dados span {
+    font-size: 12px !important;
+    line-height: 14px !important;
+}
+
+.footer-dados b {
+    font-size: 13px !important;
+    line-height: 14px !important;
+}
+
+.footer-dados a {
+    font-size: 12px !important;
+    line-height: 14px !important;
+}
+
+
+/* ======================================================
+   FERRAMENTAS
+====================================================== */
+
+.footer-ferramentas-conteudo strong {
+    font-size: 16px !important;
+    line-height: 17px !important;
+}
+
+.footer-ferramentas-conteudo a {
+    font-size: 12px !important;
+    line-height: 14px !important;
+}
+
+
+/* ======================================================
+   AUTORIA
+====================================================== */
+
+.footer-autoria {
+    font-size: 11px !important;
+    line-height: 14px !important;
+}
+
+
+/* ======================================================
+   MANTÉM O FOOTER SEM DEFORMAR
+====================================================== */
+
+.footer {
+    height: 155px !important;
+}
+
+.footer-conteudo {
+    height: 140px !important;
+}
+
+/* ======================================================
+   AJUSTE FINO - ESPAÇAMENTO E AUTORIA
+====================================================== */
+
+/* Textos da parte de cima */
+.footer-dados strong,
+.footer-dados span,
+.footer-dados b,
+.footer-dados a,
+.footer-ferramentas-conteudo strong,
+.footer-ferramentas-conteudo a {
+    letter-spacing: 0.2px;
+}
+
+
+/* Autoria com o mesmo padrão visual */
+.footer-autoria {
+    font-size: 11px !important;
+    line-height: 14px !important;
+    letter-spacing: 0.2px !important;
+
+    bottom: 8px !important;
+
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+/* Links das autoras */
+.footer-autoria a {
+    font-size: inherit !important;
+    line-height: inherit !important;
+    letter-spacing: inherit !important;
+
+    text-decoration: none !important;
+    color: #ffffff !important;
+}
+
+
+/* Evita que o texto fique apertado */
+.footer-dados {
+    letter-spacing: 0.2px;
+}
+
+.footer-ferramentas-conteudo {
+    letter-spacing: 0.2px;
+}
+
+/* ======================================================
+   AJUSTE FINAL - FERRAMENTAS + AUTORIA
+====================================================== */
+
+/* Coluna das ferramentas */
+.footer-ferramentas {
+    top: 25px !important;
+}
+
+/* Fonte padronizada com o restante do Estudaí */
+.footer-ferramentas-conteudo,
+.footer-ferramentas-conteudo strong,
+.footer-ferramentas-conteudo a,
+.footer-autoria,
+.footer-autoria a {
+    font-family: 'Nunito', sans-serif !important;
+}
+
+
+/* Título */
+.footer-ferramentas-conteudo strong {
+    font-size: 17px !important;
+    line-height: 18px !important;
+    letter-spacing: 0.2px !important;
+}
+
+
+/* Links */
+.footer-ferramentas-conteudo a {
+    font-size: 13px !important;
+    line-height: 15px !important;
+    letter-spacing: 0.2px !important;
+}
+
+
+/* ======================================================
+   AUTORIA JUNTO DAS FERRAMENTAS
+====================================================== */
+
+.footer-autoria {
+    position: absolute !important;
+
+    left: 0 !important;
+    top: 82px !important;
+    bottom: auto !important;
+
+    width: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    font-family: 'Nunito', sans-serif !important;
+
+    font-size: 12px !important;
+    font-weight: 600 !important;
+
+    line-height: 15px !important;
+
+    letter-spacing: 0.2px !important;
+
+    color: #ffffff !important;
+
+    white-space: nowrap !important;
+
+    display: block !important;
+}
+
+
+/* Nomes das autoras */
+.footer-autoria a {
+    font-size: 12px !important;
+    font-weight: 800 !important;
+
+    color: #ffffff !important;
+
+    text-decoration: none !important;
+
+    letter-spacing: 0.2px !important;
+}
+
+
+/* Sem hover */
+.footer-autoria a:hover,
+.footer-autoria a:focus,
+.footer-autoria a:active {
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+
+/* ======================================================
+   LINHA VERDE
+====================================================== */
+
+.footer-linha {
+    height: 55px !important;
+}
+
+/* ======================================================
+   CORREÇÃO DEFINITIVA - AUTORIA
+====================================================== */
+
+.footer-autoria {
+    position: absolute !important;
+
+    /* fica alinhada com FERRAMENTAS */
+    left: 46.5% !important;
+
+    /* fica logo abaixo dos links */
+    top: 102px !important;
+
+    bottom: auto !important;
+
+    width: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    font-family: 'Nunito', sans-serif !important;
+
+    font-size: 12px !important;
+    font-weight: 600 !important;
+
+    line-height: 15px !important;
+
+    letter-spacing: 0.2px !important;
+
+    color: #ffffff !important;
+
+    white-space: nowrap !important;
+
+    display: block !important;
+}
+
+
+/* nomes */
+.footer-autoria a {
+    font-family: 'Nunito', sans-serif !important;
+
+    font-size: 12px !important;
+    font-weight: 800 !important;
+
+    color: #ffffff !important;
+
+    text-decoration: none !important;
+
+    letter-spacing: 0.2px !important;
+}
+
+
+/* sem hover */
+.footer-autoria a:hover,
+.footer-autoria a:focus,
+.footer-autoria a:active {
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+
+/* ======================================================
+   FERRAMENTAS
+====================================================== */
+
+.footer-ferramentas {
+    left: 46.5% !important;
+    top: 25px !important;
+}
+
+
+/* mantém a linha vertical */
+.footer-linha {
+    height: 70px !important;
+}
+
+/* ======================================================
+   ORIENTADOR - ABAIXO DO TELEFONE
+====================================================== */
+
+.footer-orientador {
+    margin: 3px 0 0 0 !important;
+    padding: 0 !important;
+
+    font-family: 'Nunito', sans-serif !important;
+
+    font-size: 11px !important;
+    font-weight: 700 !important;
+
+    line-height: 14px !important;
+
+    color: #ffffff !important;
+
+    letter-spacing: 0.2px;
+}
+
+.footer-orientador a {
+    font-family: 'Nunito', sans-serif !important;
+
+    color: #ffffff !important;
+
+    font-size: 11px !important;
+    font-weight: 800 !important;
+
+    text-decoration: underline;
+
+    cursor: pointer;
+}
+
+.footer-orientador a:hover {
+    color: #d4ff00 !important;
+}
+
