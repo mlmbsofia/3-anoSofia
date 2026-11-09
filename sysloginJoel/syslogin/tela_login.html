@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login</title>
+
+    <!-- Importação das fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Roboto:wght@400;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+<main class="container">
+
+    <form id="formLogin">
+
+        <h1>Login</h1>
+
+        <div class="campo">
+            <label for="usuario">Usuário</label>
+            <input
+                    type="text"
+                    id="usuario"
+                    name="usuario"
+                    placeholder="Digite seu usuário"
+                    required
+            >
+        </div>
+
+        <div class="campo">
+            <label for="senha">Senha</label>
+            <input
+                    type="password"
+                    id="senha"
+                    name="senha"
+                    placeholder="Digite sua senha"
+                    required
+            >
+        </div>
+
+        <button type="submit">Entrar</button>
+
+        <nav class="links">
+            <a href="cadastro.html">Cadastrar-se</a>
+            <a href="recuperar-senha.html">
+                Esqueceu a senha?
+            </a>
+        </nav>
+
+        <p id="mensagem" role="status" aria-live="polite"></p>
+
+    </form>
+
+</main>
+
+</body>
+</html>
