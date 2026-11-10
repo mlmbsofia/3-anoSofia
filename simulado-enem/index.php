@@ -1671,19 +1671,6 @@ if ($pagina === 'resultado') {
 
 <header class="header">
 
-    <!-- LOGO DA ESCOLA -->
-    <a
-            href="index.php?pagina=inicio"
-            class="logo-escola-header"
-            aria-label="Escola Estadual Maria Luiza Miranda Bastos"
-    >
-        <img
-                src="imagens-footer/logo-escola.png"
-                alt="Logo da Escola Estadual Maria Luiza Miranda Bastos"
-        >
-    </a>
-
-
     <!-- LOGO ESTUDAÍ -->
     <div class="logo">
 
@@ -1975,7 +1962,7 @@ if ($pagina === 'resultado') {
                     class="area-card rosa-card"
                 >
 
-                    <div class="area-icon">∑</div>
+                    <div class="area-icon">%</div>
 
                     <div>
                         <h3>Matemática</h3>
@@ -1992,7 +1979,7 @@ if ($pagina === 'resultado') {
                     class="area-card roxo-card"
                 >
 
-                    <div class="area-icon">⚗</div>
+                    <div class="area-icon">🧪</div>
 
                     <div>
                         <h3>Ciências da Natureza</h3>
@@ -2009,7 +1996,7 @@ if ($pagina === 'resultado') {
                     class="area-card amarelo-card"
                 >
 
-                    <div class="area-icon">◎</div>
+                    <div class="area-icon">📜</div>
 
                     <div>
                         <h3>Ciências Humanas</h3>
@@ -3113,10 +3100,6 @@ if ($pagina === 'resultado') {
 
                 <span>
                     Rua São José do Cuti, 60 - Planalto, Belo Horizonte - MG
-                </span>
-f
-                <span>
-                    31720-370
                 </span>
 
                 <b>
