@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #ffffff;
+    color: #006c8c;
+}
+
+.pagina-produtos {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto 60px;
+}
+
+header {
+    min-height: 150px;
+
+    background: #78dfff;
+
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    padding: 25px 80px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.10);
+}
+
+header a {
+    position: absolute;
+    left: 25px;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+    color: #006c8c;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    font-size: 25px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+header a:hover {
+    background: #006c8c;
+    color: #ffffff;
+
+    transform: scale(1.08);
+}
+
+header h1 {
+    color: #006c8c;
+
+    font-size: 36px;
+
+    text-align: center;
+}
+
+.descricao-pagina {
+    text-align: center;
+
+    color: #555555;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+    margin: 30px auto;
+
+    max-width: 750px;
+}
+
+.produtos-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 28px;
+}
+
+.card {
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    border: 2px solid #FAB9DA;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+
+    border-color: #33b6de;
+
+    box-shadow: 0 12px 25px rgba(0,0,0,0.13);
+}
+
+.imagem {
+    width: 100%;
+    height: 230px;
+
+    background: #fff3fa;
+}
+
+.imagem img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.3s;
+}
+
+.card:hover .imagem img {
+    transform: scale(1.04);
+}
+
+.informacoes {
+    padding: 22px;
+}
+
+.informacoes span {
+    display: inline-block;
+
+    background: #FAB9DA;
+
+    color: #006c8c;
+
+    padding: 6px 13px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    margin-bottom: 12px;
+}
+
+.informacoes h2 {
+    color: #006c8c;
+
+    font-size: 21px;
+
+    line-height: 1.3;
+
+    margin-bottom: 10px;
+}
+
+.informacoes p {
+    color: #555555;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    min-height: 65px;
+}
+
+.informacoes strong {
+    display: block;
+
+    color: #006c8c;
+
+    font-size: 26px;
+
+    margin-top: 15px;
+}
+
+.botoes {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 18px;
+}
+
+.botoes a {
+    flex: 1;
+
+    padding: 11px 8px;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    background: #33b6de;
+
+    color: #ffffff;
+
+    transition: 0.3s;
+}
+
+.botoes a:hover {
+    background: #006c8c;
+
+    transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+
+    .produtos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .pagina-produtos {
+        width: 94%;
+        margin-top: 15px;
+    }
+
+    header {
+        min-height: 120px;
+        padding: 20px 55px;
+    }
+
+    header h1 {
+        font-size: 26px;
+    }
+
+    header a {
+        left: 15px;
+
+        width: 42px;
+        height: 42px;
+    }
+
+    .produtos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .descricao-pagina {
+        font-size: 14px;
+    }
+
+    .botoes {
+        flex-direction: column;
+    }
+}

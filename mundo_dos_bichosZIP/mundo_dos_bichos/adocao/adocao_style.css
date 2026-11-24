@@ -1,0 +1,1456 @@
+/* =================================
+   RESET
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =================================
+   VARIÁVEIS DE CORES
+================================= */
+
+:root {
+    --azul-claro: #78dfff;
+    --azul: #33b6de;
+    --azul-escuro: #006c8c;
+    --verde: #b9e39a;
+    --rosa: #FAB9DA;
+    --cinza: #777777;
+}
+
+
+/* =================================
+   HTML E BODY
+================================= */
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Baloo 2', cursive;
+    background: #ffffff;
+    color: #555;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    width: 100%;
+    min-height: 100px;
+
+    background: #bdeba2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    padding: 8px 50px;
+
+    border-bottom: 3px solid var(--azul-claro);
+
+    box-shadow:
+            0 3px 15px rgba(0, 108, 140, 0.12);
+}
+
+
+/* LOGO PEQUENO */
+
+.header-esquerdo {
+    position: absolute;
+
+    left: 40px;
+
+    display: flex;
+    align-items: center;
+}
+
+.logo-pequeno {
+    width: 103px;
+    height: 82px;
+
+    object-fit: contain;
+}
+
+
+/* LOGO CENTRAL */
+
+.logo-container {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+}
+
+.logo-container img {
+    width: 250px;
+    height: 92px;
+
+    object-fit: contain;
+}
+
+
+/* =========================================
+   ÍCONES DO HEADER
+========================================= */
+
+.header-direito {
+    position: absolute;
+
+    right: 45px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+}
+
+.icone-header {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 4px;
+
+    color: var(--azul-escuro);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: 0.25s;
+}
+
+.icone-header i {
+    font-size: 24px;
+
+    color: var(--azul);
+}
+
+.icone-header:hover {
+    color: var(--azul);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   MENU
+========================================= */
+
+.nav {
+    width: 100%;
+
+    background: var(--azul-escuro);
+
+    box-shadow:
+            0 3px 10px rgba(0, 108, 140, 0.20);
+}
+
+.nav-container {
+    min-height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 4px;
+}
+
+.nav-link {
+    min-height: 58px;
+
+    padding: 0 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    position: relative;
+
+    transition: 0.25s;
+}
+
+.nav-link:hover,
+.nav-link.ativo {
+    background: var(--azul);
+}
+
+.nav-link::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 50%;
+
+    width: 0;
+
+    height: 4px;
+
+    background: var(--rosa);
+
+    transform: translateX(-50%);
+
+    transition: 0.25s;
+}
+
+.nav-link:hover::after,
+.nav-link.ativo::after {
+    width: 70%;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    background:
+
+            radial-gradient(
+                    circle at 85% 20%,
+                    rgba(250, 185, 218, 0.65),
+                    transparent 25%
+            ),
+
+            radial-gradient(
+                    circle at 10% 80%,
+                    rgba(185, 227, 154, 0.75),
+                    transparent 28%
+            ),
+
+            linear-gradient(
+                    135deg,
+                    var(--azul-claro),
+                    #eafcff
+            );
+
+    overflow: hidden;
+}
+
+.hero-conteudo {
+    max-width: 1200px;
+
+    min-height: 450px;
+
+    margin: 0 auto;
+
+    padding: 65px 35px;
+
+    display: grid;
+
+    grid-template-columns: 1.1fr 0.9fr;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+.hero-texto {
+    max-width: 650px;
+}
+
+.etiqueta {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 15px;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    color: var(--azul-escuro);
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+
+    margin-bottom: 18px;
+}
+
+.etiqueta.rosa {
+    background: var(--rosa);
+}
+
+.hero h1 {
+    color: var(--azul-escuro);
+
+    font-size: clamp(40px, 5vw, 65px);
+
+    line-height: 1.02;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 strong {
+    display: block;
+
+    color: var(--azul);
+}
+
+.hero-texto > p {
+    color: #31515b;
+
+    font-size: 18px;
+
+    max-width: 570px;
+
+    margin-bottom: 28px;
+}
+
+
+/* =========================================
+   BOTÕES HERO
+========================================= */
+
+.hero-botoes {
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+.botao-principal,
+.botao-secundario,
+.cta-botao {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 14px 22px;
+
+    border-radius: 12px;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+    transition: 0.25s;
+}
+
+.botao-principal {
+    background: var(--azul-escuro);
+
+    color: white;
+}
+
+.botao-principal:hover {
+    background: var(--azul);
+
+    transform: translateY(-2px);
+}
+
+.botao-secundario {
+    background: white;
+
+    color: var(--azul-escuro);
+
+    border: 2px solid rgba(0, 108, 140, 0.15);
+}
+
+.botao-secundario:hover {
+    border-color: var(--azul);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   ILUSTRAÇÃO HERO
+========================================= */
+
+.hero-ilustracao {
+    min-height: 330px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.pet-card {
+    width: 280px;
+
+    height: 280px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+            0 25px 50px rgba(0, 108, 140, 0.20);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    padding: 35px;
+}
+
+.pet-card span {
+    font-size: 105px;
+
+    line-height: 1;
+
+    margin-bottom: 12px;
+}
+
+.pet-card strong {
+    color: var(--azul-escuro);
+
+    font-size: 19px;
+}
+
+.pet-card small {
+    color: var(--cinza);
+
+    margin-top: 5px;
+}
+
+
+/* =========================================
+   BOLHAS
+========================================= */
+
+.bolha {
+    position: absolute;
+
+    border-radius: 50%;
+}
+
+.bolha-1 {
+    width: 100px;
+
+    height: 100px;
+
+    background: var(--rosa);
+
+    top: 15px;
+
+    right: 35px;
+}
+
+.bolha-2 {
+    width: 70px;
+
+    height: 70px;
+
+    background: var(--verde);
+
+    bottom: 10px;
+
+    left: 35px;
+}
+
+
+/* =========================================
+   PATINHAS
+========================================= */
+
+.patinha {
+    position: absolute;
+
+    color: var(--azul-escuro);
+
+    font-size: 35px;
+
+    z-index: 3;
+}
+
+.patinha-1 {
+    top: 30px;
+
+    left: 70px;
+
+    transform: rotate(-20deg);
+}
+
+.patinha-2 {
+    bottom: 35px;
+
+    right: 70px;
+
+    transform: rotate(25deg);
+}
+
+
+/* =================================
+   BANNER DE ADOÇÃO
+================================= */
+
+.banner-adocao {
+    width: 90%;
+
+    max-width: 1100px;
+
+    margin: 40px auto;
+
+    display: grid;
+
+    grid-template-columns: 450px 1fr;
+
+    align-items: center;
+
+    gap: 45px;
+}
+
+
+/* =================================
+   IMAGEM DO BANNER
+================================= */
+
+.imagem-banner {
+    width: 450px;
+
+    height: 300px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+}
+
+.imagem-banner img {
+    width: 100% !important;
+
+    height: 100% !important;
+
+    max-width: none !important;
+
+    max-height: none !important;
+
+    object-fit: cover !important;
+
+    display: block !important;
+
+    margin: 0 !important;
+
+    border-radius: 25px;
+}
+
+
+/* =================================
+   TEXTO DO BANNER
+================================= */
+
+.texto-adocao {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 300px;
+
+    background: #dff2ce;
+
+    border-radius: 25px;
+
+    padding: 35px;
+
+    display: flex;
+
+    align-items: center;
+}
+
+.texto-adocao p {
+    font-size: 17px;
+
+    line-height: 1.5;
+
+    color: #555;
+
+    padding-right: 20px;
+}
+
+.patinhas {
+    position: absolute;
+
+    right: 20px;
+
+    bottom: 15px;
+
+    font-size: 30px;
+}
+
+
+/* =================================
+   TÍTULO
+================================= */
+
+.titulo-adocao {
+    width: 90%;
+
+    max-width: 1100px;
+
+    margin: 40px auto 30px;
+
+    text-align: center;
+}
+
+.titulo-adocao h1 {
+    color: var(--azul-escuro);
+
+    font-size: 30px;
+
+    margin-bottom: 8px;
+}
+
+.titulo-adocao p {
+    color: #777;
+
+    font-size: 17px;
+}
+
+
+/* =================================
+   CARDS
+================================= */
+
+.cards-adocao {
+    width: 90%;
+
+    max-width: 1100px;
+
+    margin: 0 auto 70px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+
+/* =================================
+   CARD
+================================= */
+
+.card {
+    width: 100%;
+
+    background: white;
+
+    padding: 15px;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow:
+            0 3px 12px rgba(0, 0, 0, 0.10);
+
+    overflow: hidden;
+
+    transition: 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+            0 7px 18px rgba(0, 0, 0, 0.14);
+}
+
+
+/* =================================
+   FOTOS DOS ANIMAIS
+================================= */
+
+.card img {
+    width: 100% !important;
+
+    height: 190px !important;
+
+    max-width: 100% !important;
+
+    max-height: 190px !important;
+
+    object-fit: cover !important;
+
+    display: block !important;
+
+    margin: 0 auto !important;
+
+    border-radius: 14px;
+}
+
+
+/* =================================
+   NOME DO ANIMAL
+================================= */
+
+.card h3 {
+    margin: 14px 0;
+
+    color: var(--azul-escuro);
+
+    font-size: 18px;
+}
+
+
+/* =================================
+   BOTÃO ADOTE
+================================= */
+
+.botao-adote {
+    display: inline-block;
+
+    background: var(--verde);
+
+    color: #006c8c;
+
+    padding: 8px 25px;
+
+    border-radius: 25px;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.botao-adote:hover {
+    background: var(--rosa);
+
+    transform: scale(1.04);
+}
+
+
+/* =================================
+   CHECKBOX
+================================= */
+
+.controle-formulario {
+    display: none;
+}
+
+
+/* =================================
+   MODAL
+================================= */
+
+.modal-formulario {
+    display: none;
+
+    position: fixed;
+
+    z-index: 999999;
+
+    left: 0;
+
+    top: 0;
+
+    width: 100vw;
+
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+}
+
+
+/* ABRIR MODAL */
+
+#formulario:checked ~ .modal-formulario {
+    display: flex;
+}
+
+
+/* =================================
+   CAIXA DO FORMULÁRIO
+================================= */
+
+.caixa-formulario {
+    position: relative;
+
+    width: 430px;
+
+    max-width: 90vw;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    box-shadow:
+            0 5px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =================================
+   TÍTULO DO FORMULÁRIO
+================================= */
+
+.caixa-formulario h2 {
+    text-align: center;
+
+    color: var(--azul-escuro);
+
+    font-size: 27px;
+
+    margin-bottom: 8px;
+}
+
+.caixa-formulario p {
+    text-align: center;
+
+    color: #777;
+
+    margin-bottom: 20px;
+}
+
+
+/* =================================
+   FORMULÁRIO
+================================= */
+
+.caixa-formulario form {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.caixa-formulario label {
+    color: #555;
+
+    font-weight: 600;
+
+    margin-bottom: 4px;
+}
+
+.caixa-formulario input {
+    width: 100%;
+
+    padding: 11px;
+
+    margin-bottom: 15px;
+
+    border: 2px solid var(--verde);
+
+    border-radius: 10px;
+
+    font-family: 'Baloo 2', cursive;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+.caixa-formulario input:focus {
+    border-color: var(--azul);
+}
+
+
+/* =================================
+   BOTÃO DO FORMULÁRIO
+================================= */
+
+.caixa-formulario button {
+    width: 100%;
+
+    border: none;
+
+    background: var(--azul-escuro);
+
+    color: white;
+
+    padding: 12px;
+
+    border-radius: 25px;
+
+    font-family: 'Baloo 2', cursive;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.caixa-formulario button:hover {
+    background: var(--azul);
+
+    transform: translateY(-2px);
+}
+
+
+/* =================================
+   FECHAR MODAL
+================================= */
+
+.fechar {
+    position: absolute;
+
+    top: 8px;
+
+    right: 17px;
+
+    color: #777;
+
+    font-size: 35px;
+
+    font-weight: bold;
+
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.fechar:hover {
+    color: var(--azul-escuro);
+}
+
+
+/* =================================
+   MENSAGEM DE SUCESSO
+================================= */
+
+.mensagem-sucesso {
+    display: none;
+
+    text-align: center;
+}
+
+.mensagem-sucesso h3 {
+    color: var(--azul-escuro);
+
+    font-size: 22px;
+
+    margin-bottom: 10px;
+}
+
+
+/* =================================
+   FOOTER
+================================= */
+
+.footer {
+    width: 100%;
+
+    background: var(--azul-claro);
+
+    color: #000;
+
+    margin-top: 30px;
+}
+
+
+/* CONTAINER */
+
+.footer-container {
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 45px 0;
+
+    display: grid;
+
+    grid-template-columns: 1.2fr 1fr 0.8fr;
+
+    gap: 50px;
+}
+
+
+/* SEÇÕES DO FOOTER */
+
+.footer-section h3 {
+    color: #000;
+
+    font-size: 21px;
+
+    margin-bottom: 15px;
+}
+
+.footer-section p {
+    color: #17212b;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 7px;
+}
+
+.footer-section i {
+    margin-right: 7px;
+
+    color: var(--azul-escuro);
+}
+
+
+/* =================================
+   REDES SOCIAIS
+================================= */
+
+.social-icons {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 15px;
+}
+
+.social-icons a {
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: var(--azul);
+
+    color: #000;
+
+    border-radius: 50%;
+
+    text-decoration: none;
+
+    transition: 0.25s;
+}
+
+.social-icons a:hover {
+    background: var(--rosa);
+
+    transform: translateY(-3px);
+}
+
+.redes-texto {
+    margin-top: 12px;
+}
+
+
+/* =================================
+   FOOTER BOTTOM
+================================= */
+
+.footer-bottom {
+    width: 100%;
+
+    background: var(--azul);
+
+    padding: 15px;
+
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+
+    color: #000;
+
+    font-size: 13px;
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 950px) {
+
+    /* HEADER */
+
+    .header {
+        min-height: 90px;
+
+        padding: 8px 25px;
+    }
+
+    .header-esquerdo {
+        left: 20px;
+    }
+
+    .logo-pequeno {
+        width: 80px;
+
+        height: 70px;
+    }
+
+    .logo-container img {
+        width: 210px;
+
+        height: 80px;
+    }
+
+    .header-direito {
+        right: 20px;
+
+        gap: 15px;
+    }
+
+    .icone-header span {
+        font-size: 12px;
+    }
+
+
+    /* NAV */
+
+    .nav-container {
+        flex-wrap: wrap;
+
+        min-height: 55px;
+    }
+
+    .nav-link {
+        padding: 0 14px;
+
+        font-size: 14px;
+    }
+
+
+    /* BANNER */
+
+    .banner-adocao {
+        grid-template-columns: 1fr;
+
+        justify-items: center;
+    }
+
+    .imagem-banner {
+        width: 100%;
+
+        max-width: 600px;
+    }
+
+    .texto-adocao {
+        width: 100%;
+    }
+
+
+    /* CARDS */
+
+    .cards-adocao {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* FOOTER */
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 30px;
+    }
+
+}
+
+
+/* =================================
+   CELULAR
+================================= */
+
+@media (max-width: 600px) {
+
+    /* HEADER */
+
+    .header {
+        min-height: 80px;
+
+        padding: 8px 15px;
+
+        justify-content: center;
+    }
+
+    .header-esquerdo {
+        left: 12px;
+    }
+
+    .logo-pequeno {
+        width: 60px;
+
+        height: 55px;
+    }
+
+    .logo-container img {
+        width: 160px;
+
+        height: 65px;
+    }
+
+    .header-direito {
+        position: static;
+
+        gap: 8px;
+
+        margin-left: auto;
+    }
+
+    .icone-header {
+        font-size: 10px;
+
+        gap: 2px;
+    }
+
+    .icone-header i {
+        font-size: 19px;
+    }
+
+
+    /* NAV */
+
+    .nav-container {
+        gap: 0;
+
+        flex-wrap: wrap;
+    }
+
+    .nav-link {
+        min-height: 48px;
+
+        padding: 0 10px;
+
+        font-size: 12px;
+    }
+
+    .nav-link i {
+        font-size: 12px;
+    }
+
+
+    /* BANNER */
+
+    .banner-adocao {
+        width: 92%;
+
+        margin-top: 25px;
+
+        gap: 25px;
+    }
+
+    .imagem-banner {
+        width: 100%;
+
+        height: 250px;
+    }
+
+    .imagem-banner img {
+        width: 100% !important;
+
+        height: 250px !important;
+
+        object-fit: cover !important;
+    }
+
+    .texto-adocao {
+        min-height: auto;
+
+        padding: 25px;
+    }
+
+    .texto-adocao p {
+        font-size: 15px;
+
+        padding-right: 5px;
+    }
+
+
+    /* TÍTULO */
+
+    .titulo-adocao {
+        width: 92%;
+
+        margin-top: 30px;
+    }
+
+    .titulo-adocao h1 {
+        font-size: 25px;
+    }
+
+    .titulo-adocao p {
+        font-size: 14px;
+    }
+
+
+    /* CARDS */
+
+    .cards-adocao {
+        grid-template-columns: 1fr 1fr;
+
+        width: 92%;
+
+        gap: 15px;
+    }
+
+    .card {
+        padding: 10px;
+    }
+
+    .card img {
+        height: 150px !important;
+    }
+
+    .card h3 {
+        font-size: 14px;
+
+        margin: 10px 0;
+    }
+
+    .botao-adote {
+        font-size: 14px;
+
+        padding: 6px 18px;
+    }
+
+
+    /* MODAL */
+
+    .caixa-formulario {
+        width: 95%;
+
+        padding: 25px 20px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-container {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        gap: 30px;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+}
+
+
+/* =================================
+   CELULAR PEQUENO
+================================= */
+
+@media (max-width: 400px) {
+
+    .header {
+        padding: 6px 10px;
+    }
+
+    .logo-pequeno {
+        width: 50px;
+
+        height: 48px;
+    }
+
+    .logo-container img {
+        width: 130px;
+
+        height: 55px;
+    }
+
+    .header-direito {
+        gap: 5px;
+    }
+
+    .icone-header i {
+        font-size: 17px;
+    }
+
+    .icone-header span {
+        font-size: 9px;
+    }
+
+    .nav-link {
+        padding: 0 7px;
+
+        font-size: 11px;
+    }
+
+    .nav-link i {
+        display: none;
+    }
+
+    .cards-adocao {
+        grid-template-columns: 1fr;
+    }
+
+    .card img {
+        height: 190px !important;
+    }
+
+}

@@ -1,0 +1,1336 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Segoe UI', sans-serif;
+}
+
+
+body {
+    background: #ffffff;
+    color: #006c8c;
+}
+
+
+/* =========================
+   PÁGINA PRINCIPAL
+========================= */
+
+.pagina-produtos {
+    width: 80%;
+    max-width: 1300px;
+
+    margin: 27px auto;
+
+    min-height: 90vh;
+}
+
+
+/* HEADER */
+
+.header {
+    width: 100%;
+    height: 88px;
+    min-height: 88px;
+
+    background-color: #bdeba2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    padding: 5px 40px;
+
+    border-bottom: 2px solid #78dfff;
+
+    box-shadow: 0 3px 15px rgba(0, 108, 140, 0.12);
+}
+
+/* LOGO CENTRALIZADA */
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-container img {
+    width: 200px;
+    height: 75px;
+    object-fit: contain;
+}
+
+/* ÍCONES À DIREITA */
+
+.header-direito {
+    position: absolute;
+    right: 35px;
+
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.icone-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+
+    color: #006c8c;
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.icone-header i {
+    font-size: 21px;
+    color: #33b6de;
+}
+
+/* MENU */
+
+.nav {
+    width: 100%;
+    height: 47px;
+
+    background-color: #006c8c;
+}
+
+.nav-container {
+    height: 47px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+}
+
+.nav-link {
+    height: 47px;
+    padding: 0 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    color: white;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    position: relative;
+    transition: 0.25s;
+}
+
+.nav-link:hover,
+.nav-link.ativo {
+    background-color: #33b6de;
+}
+
+.nav-link::after {
+    content: "";
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+
+    width: 0;
+    height: 3px;
+
+    background-color: #FAB9DA;
+
+    transform: translateX(-50%);
+    transition: 0.25s;
+}
+
+.nav-link:hover::after,
+.nav-link.ativo::after {
+    width: 70%;
+}
+
+
+/* =========================
+   CATEGORIAS
+========================= */
+
+.categorias {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 80px;
+
+    margin-top: 32px;
+
+    flex-wrap: wrap;
+}
+
+
+.categoria {
+
+    width: 245px;
+
+    min-height: 250px;
+
+    border-radius: 17px;
+
+    text-decoration: none;
+
+    text-align: center;
+
+    padding: 20px;
+
+    transition: 0.3s;
+
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+
+.categoria:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+
+.categoria h2 {
+
+    color: #006c8c;
+
+    font-size: 26px;
+
+    margin-bottom: 15px;
+}
+
+
+.categoria .icone {
+
+    font-size: 75px;
+
+    margin: 10px 0;
+}
+
+
+.categoria p {
+
+    color: #333;
+
+    font-size: 15px;
+}
+
+
+/* CORES DAS CATEGORIAS */
+
+.petiscos {
+
+    background: #FAB9DA;
+}
+
+
+.acessorios {
+
+    background: #b9e39a;
+}
+
+
+.vacinas {
+
+    background: #78dfff;
+}
+
+
+/* BOTÃO HOME */
+
+.botao-voltar {
+
+    display: block;
+
+    width: 300px;
+
+    margin: 48px auto 0;
+
+    padding: 16px;
+
+    background: #78dfff;
+
+    color: #006c8c;
+
+    text-decoration: none;
+
+    text-align: center;
+
+    font-size: 20px;
+
+    border-radius: 15px;
+
+    transition: 0.3s;
+}
+
+
+.botao-voltar:hover {
+
+    background: #33b6de;
+
+    color: white;
+}
+
+
+
+/* =========================
+   PÁGINA DE CATEGORIA
+========================= */
+
+.pagina-categoria {
+
+    width: 90%;
+
+    max-width: 1400px;
+
+    margin: 25px auto 50px;
+}
+
+
+/* CABEÇALHO */
+
+.cabecalho-categoria {
+
+    min-height: 140px;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 25px 40px;
+
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+
+.cabecalho-categoria h1 {
+
+    font-size: 45px;
+
+    color: #006c8c;
+
+    text-align: center;
+}
+
+
+.cabecalho-categoria p {
+
+    color: #333;
+
+    text-align: center;
+
+    margin-top: 5px;
+}
+
+
+.cor-petiscos {
+
+    background: #FAB9DA;
+}
+
+
+.cor-acessorios {
+
+    background: #b9e39a;
+}
+
+
+.cor-vacinas {
+
+    background: #78dfff;
+}
+
+
+.icone-cabecalho {
+
+    font-size: 60px;
+}
+
+
+.voltar {
+
+    font-size: 25px;
+
+    color: #006c8c;
+
+    text-decoration: none;
+}
+
+
+/* =========================
+   ANIMAIS
+========================= */
+
+.animais {
+
+    margin-top: 40px;
+
+    text-align: center;
+}
+
+
+.animais h2 {
+
+    font-size: 30px;
+
+    color: #006c8c;
+
+    margin-bottom: 25px;
+}
+
+
+.animais-grid {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+
+.animal-card {
+
+    width: 180px;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    text-decoration: none;
+
+    color: #006c8c;
+
+    transition: 0.3s;
+
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+
+.animal-card:hover {
+
+    transform: translateY(-5px);
+}
+
+
+.animal-card span {
+
+    font-size: 55px;
+
+    display: block;
+
+    margin-bottom: 8px;
+}
+
+
+.animal-card h3 {
+
+    font-size: 19px;
+}
+
+
+.cachorro {
+
+    background: #b9e39a;
+}
+
+
+.gato {
+
+    background: #FAB9DA;
+}
+
+
+.ave {
+
+    background: #78dfff;
+}
+
+
+.peixe {
+
+    background: #33b6de;
+}
+
+
+.pequeno {
+
+    background: #b9e39a;
+}
+
+
+/* =========================
+   PRODUTOS
+========================= */
+
+.produtos {
+
+    margin-top: 50px;
+}
+
+
+.grupo-produtos {
+
+    margin-bottom: 60px;
+
+    scroll-margin-top: 20px;
+}
+
+
+.grupo-produtos h2 {
+
+    color: #006c8c;
+
+    font-size: 28px;
+
+    border-bottom: 3px solid #78dfff;
+
+    padding-bottom: 10px;
+
+    margin-bottom: 25px;
+}
+
+
+.produtos-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(240px, 1fr));
+
+    gap: 25px;
+}
+
+
+.produto {
+
+    background: white;
+
+    border-radius: 17px;
+
+    padding: 22px;
+
+    text-align: center;
+
+    border: 2px solid #b9e39a;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+}
+
+
+.produto:hover {
+
+    transform: translateY(-6px);
+
+    border-color: #33b6de;
+}
+
+
+.produto-img {
+
+    height: 120px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 70px;
+
+    background: #f4fcff;
+
+    border-radius: 13px;
+
+    margin-bottom: 15px;
+}
+
+
+.produto h3 {
+
+    color: #006c8c;
+
+    font-size: 20px;
+
+    margin-bottom: 8px;
+}
+
+
+.produto p {
+
+    color: #555;
+
+    font-size: 14px;
+
+    min-height: 40px;
+}
+
+
+.produto button {
+
+    margin-top: 15px;
+
+    border: none;
+
+    background: #33b6de;
+
+    color: white;
+
+    padding: 10px 22px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+}
+
+
+.produto button:hover {
+
+    background: #006c8c;
+}
+
+
+/* =========================
+   BOTÃO VOLTAR
+========================= */
+
+.botao-voltar-categoria {
+
+    display: block;
+
+    width: 270px;
+
+    margin: 30px auto;
+
+    padding: 14px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    background: #78dfff;
+
+    color: #006c8c;
+
+    border-radius: 13px;
+
+    font-size: 18px;
+}
+
+
+.botao-voltar-categoria:hover {
+
+    background: #33b6de;
+
+    color: white;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 800px) {
+
+    .pagina-produtos,
+    .pagina-categoria {
+
+        width: 94%;
+    }
+
+
+    .titulo-produtos h1 {
+
+        font-size: 38px;
+    }
+
+
+    .animal-esquerda,
+    .animal-direita {
+
+        font-size: 50px;
+    }
+
+
+    .categorias {
+
+        gap: 25px;
+    }
+
+
+    .categoria {
+
+        width: 220px;
+    }
+
+
+    .cabecalho-categoria {
+
+        padding: 20px;
+
+    }
+
+
+    .cabecalho-categoria h1 {
+
+        font-size: 32px;
+    }
+
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+
+    background: var(--azul-claro);
+
+    color: #000;
+
+    width: 100%;
+}
+
+
+.footer-container {
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 45px 35px;
+
+    display: grid;
+
+    grid-template-columns: 1.2fr 1fr 0.8fr;
+
+    gap: 50px;
+}
+
+
+.footer-section h3 {
+
+    font-size: 19px;
+
+    color: #000;
+
+    margin-bottom: 14px;
+}
+
+
+.footer-section p {
+
+    color: #17212b;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 7px;
+}
+
+
+.footer-section i {
+
+    margin-right: 7px;
+}
+
+
+.social-icons {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin: 10px 0 12px;
+}
+
+
+.social-icons a {
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: var(--azul);
+
+    color: #000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 19px;
+
+    transition: 0.25s;
+}
+
+
+.social-icons a:hover {
+
+    background: white;
+
+    transform: translateY(-3px);
+}
+
+
+.footer-bottom {
+
+    background: var(--azul);
+
+    text-align: center;
+
+    padding: 15px 20px;
+}
+
+
+.footer-bottom p {
+
+    margin: 0;
+
+    color: #000;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 950px) {
+
+    .header {
+
+        padding: 8px 20px;
+    }
+
+
+    .header-esquerdo {
+
+        left: 20px;
+    }
+
+
+    .header-direito {
+
+        right: 20px;
+
+        gap: 15px;
+    }
+
+
+    .hero-conteudo {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+
+    .hero-texto {
+
+        margin: auto;
+    }
+
+
+    .hero-botoes,
+    .etiqueta {
+
+        justify-content: center;
+    }
+
+
+    .hero-ilustracao {
+
+        min-height: 290px;
+    }
+
+
+    .beneficios {
+
+        grid-template-columns: repeat(2, 1fr);
+
+        margin-left: 20px;
+
+        margin-right: 20px;
+    }
+
+
+    .categorias-grid,
+    .ofertas-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .servicos-conteudo {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .footer-container {
+
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .header {
+
+        min-height: 82px;
+    }
+
+
+    .logo-pequeno {
+
+        width: 70px;
+
+        height: 65px;
+    }
+
+
+    .logo-container img {
+
+        width: 170px;
+
+        height: 65px;
+    }
+
+
+    .icone-header span {
+
+        display: none;
+    }
+
+
+    .header-direito {
+
+        gap: 12px;
+    }
+
+
+    .icone-header i {
+
+        font-size: 21px;
+    }
+
+
+    .nav {
+
+        overflow-x: auto;
+    }
+
+
+    .nav-container {
+
+        width: max-content;
+
+        justify-content: flex-start;
+    }
+
+
+    .nav-link {
+
+        min-height: 50px;
+
+        padding: 0 15px;
+
+        font-size: 13px;
+    }
+
+
+    .hero-conteudo {
+
+        padding: 45px 22px;
+    }
+
+
+    .hero h1 {
+
+        font-size: 42px;
+    }
+
+
+    .hero-texto > p {
+
+        font-size: 16px;
+    }
+
+
+    .pet-card {
+
+        width: 235px;
+
+        height: 235px;
+    }
+
+
+    .pet-card span {
+
+        font-size: 75px;
+    }
+
+
+    .beneficios {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .secao {
+
+        padding: 60px 20px;
+    }
+
+
+    .titulo-secao h2 {
+
+        font-size: 29px;
+    }
+
+
+    .categorias-grid,
+    .ofertas-grid,
+    .servicos-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .servicos-texto h2 {
+
+        font-size: 34px;
+    }
+
+
+    .cta {
+
+        margin: 0 20px 60px;
+
+        padding: 28px 24px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .cta h2 {
+
+        font-size: 23px;
+    }
+
+
+    .footer-container {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+
+    .social-icons {
+
+        justify-content: center;
+    }
+
+}
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+.footer {
+    width: 100%;
+
+    margin-top: 60px;
+
+    background: #78dfff;
+
+    color: #17212b;
+
+    border-top: 3px solid #33b6de;
+}
+
+
+/* ==================================================
+   CONTAINER PRINCIPAL DO FOOTER
+================================================== */
+
+.footer-container {
+    width: min(1200px, 92%);
+
+    margin: 0 auto;
+
+    padding: 55px 40px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.3fr
+        1fr
+        0.8fr;
+
+    gap: 70px;
+
+    align-items: start;
+}
+
+
+/* ==================================================
+   SEÇÕES
+================================================== */
+
+.footer-section {
+    min-width: 0;
+}
+
+.footer-section h3 {
+    margin: 0 0 18px;
+
+    color: #006c8c;
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+}
+
+
+.footer-section p {
+    margin: 0 0 11px;
+
+    color: #17212b;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* ==================================================
+   CONTATO
+================================================== */
+
+.footer-contato p {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+}
+
+
+.footer-contato i {
+    width: 20px;
+
+    flex-shrink: 0;
+
+    margin-top: 4px;
+
+    color: #006c8c;
+
+    font-size: 16px;
+
+    text-align: center;
+}
+
+
+/* ==================================================
+   REDES SOCIAIS
+================================================== */
+
+.social-icons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin: 5px 0 16px;
+}
+
+
+.social-icons a {
+    width: 46px;
+
+    height: 46px;
+
+    border-radius: 50%;
+
+    background: #33b6de;
+
+    color: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 20px;
+
+    text-decoration: none;
+
+    transition:
+            transform 0.25s ease,
+            background 0.25s ease;
+}
+
+
+.social-icons a:hover {
+    background: #006c8c;
+
+    color: #ffffff;
+
+    transform: translateY(-3px);
+}
+
+
+.redes-texto {
+    color: #17212b !important;
+
+    font-size: 15px !important;
+}
+
+
+/* ==================================================
+   RODAPÉ INFERIOR
+================================================== */
+
+.footer-bottom {
+    width: 100%;
+
+    padding: 18px 25px;
+
+    background: #006c8c;
+
+    text-align: center;
+}
+
+
+.footer-bottom p {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 950px) {
+
+    .footer-container {
+        width: 94%;
+
+        padding: 45px 25px;
+
+        grid-template-columns:
+            1fr
+            1fr;
+
+        gap: 40px;
+    }
+
+    .footer-escola {
+        grid-column: 1 / -1;
+    }
+
+}
+
+
+/* ==================================================
+   CELULAR
+================================================== */
+
+@media (max-width: 650px) {
+
+    .footer {
+        margin-top: 40px;
+    }
+
+    .footer-container {
+        width: 92%;
+
+        padding: 40px 20px;
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        text-align: center;
+    }
+
+    .footer-escola {
+        grid-column: auto;
+    }
+
+    .footer-section h3 {
+        font-size: 19px;
+    }
+
+    .footer-section p {
+        font-size: 14px;
+    }
+
+    .footer-contato p {
+        justify-content: center;
+
+        align-items: center;
+
+        text-align: left;
+    }
+
+    .footer-contato i {
+        margin-top: 0;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        padding: 16px 15px;
+    }
+
+    .footer-bottom p {
+        font-size: 12px;
+    }
+
+}
