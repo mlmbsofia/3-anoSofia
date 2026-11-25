@@ -1,12 +1,12 @@
-<?php
 
-session_start();
+<?php
 
 // ==============================
 // VARIÁVEIS
 // ==============================
 
 $namePET = "";
+$rgPET = "";
 $especie = "";
 $raca = "";
 $peso = "";
@@ -31,6 +31,7 @@ $pesoErr = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+
     // ==============================
     // NOME
     // ==============================
@@ -46,8 +47,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!preg_match("/^[a-zA-ZÀ-ÿ ]*$/", $namePET)) {
 
             $namePetErr = "Permitido apenas letras e espaços.";
+
         }
     }
+
+
+
 
 
     // ==============================
@@ -61,6 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
 
         $especie = test_input($_POST["especiedopet"]);
+
     }
 
 
@@ -68,17 +74,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // RAÇA
     // ==============================
 
-    if (empty($_POST["raca"])) {
+    if (empty($_POST["raça"])) {
 
         $racaErr = "A raça é obrigatória.";
 
     } else {
 
-        $raca = test_input($_POST["raca"]);
+        $raca = test_input($_POST["raça"]);
 
         if (!preg_match("/^[a-zA-ZÀ-ÿ ]*$/", $raca)) {
 
             $racaErr = "Permitido apenas letras e espaços.";
+
         }
     }
 
@@ -98,6 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!is_numeric($peso) || $peso <= 0) {
 
             $pesoErr = "Digite um peso válido.";
+
         }
     }
 
@@ -113,6 +121,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
 
         $gender = test_input($_POST["sexo"]);
+
     }
 
 
@@ -123,6 +132,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_POST["comment"])) {
 
         $comment = test_input($_POST["comment"]);
+
     }
 
 
@@ -138,10 +148,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             empty($genderErr)
     ) {
 
-        // Guarda os dados na sessão
+        // Envia os dados para cadastro.php
+        // através da sessão.
+
+        session_start();
 
         $_SESSION["pet"] = [
                 "nome" => $namePET,
+                "rg" => $rgPET,
                 "especie" => $especie,
                 "raca" => $raca,
                 "peso" => $peso,
@@ -149,9 +163,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 "observacao" => $comment
         ];
 
-        // Vai para a página de sucesso
-
-        header("Location: cadastro.php");
+        header("Location: cadastroPet.php");
         exit;
     }
 }
@@ -179,36 +191,21 @@ function test_input($data)
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+    >
 
-    <title>Cadastro do Pet | Mundo dos Bichos</title>
+    <title>Cadastro do Pet</title>
 
-    <!-- FONT AWESOME -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
-
-        /* ==================================
-           CORES
-        ================================== */
-
-        :root {
-
-            --azul-claro: #78dfff;
-            --azul: #33b6de;
-            --azul-escuro: #006c8c;
-            --verde: #b9e39a;
-            --rosa: #FAB9DA;
-        }
-
 
         /* ==================================
            RESET
         ================================== */
 
         * {
-
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -229,229 +226,270 @@ function test_input($data)
 
             flex-direction: column;
 
+            justify-content: flex-start;
+
+            align-items: center;
+
+            padding: 0;
+
             background: linear-gradient(
                     135deg,
-                    #006c8c,
+                    #006c8b,
                     #78dfff
             );
         }
 
-
-        /* ==================================
+        /* =========================================
            HEADER
-        ================================== */
+        ========================================= */
 
         .header {
-
             width: 100%;
-
-            min-height: 100px;
-
-            background: #bdeba2;
+            height: 100px;
+            background-color: #bdeba2;
 
             display: flex;
-
             align-items: center;
-
             justify-content: center;
 
             position: relative;
 
-            padding: 8px 50px;
+            padding: 0 50px;
 
-            border-bottom: 3px solid var(--azul-claro);
+            border-bottom: 3px solid #78dfff;
+            box-shadow: 0 3px 12px rgba(0, 108, 140, 0.12);
 
-            box-shadow:
-                    0 3px 15px rgba(0, 108, 140, 0.12);
+            z-index: 10;
         }
 
 
-        .header-esquerdo {
-
-            position: absolute;
-
-            left: 40px;
-
-            display: flex;
-
-            align-items: center;
-        }
-
-
-        /* ================================
-    LOGO
-    ================================ */
-
-        .logo-pequeno {
-
-            width: 103px;
-
-            height: 82px;
-
-            object-fit: contain;
-        }
-
+        /* =========================================
+           LOGO
+        ========================================= */
 
         .logo-container {
-
             display: flex;
-
             align-items: center;
-
             justify-content: center;
-        }
 
+            height: 100%;
+            text-decoration: none;
+        }
 
         .logo-container img {
-
-            width: 250px;
-
-            height: 92px;
+            width: 210px;
+            height: 80px;
 
             object-fit: contain;
+            display: block;
         }
 
+
+        /* =========================================
+           ÍCONES DO LADO DIREITO
+        ========================================= */
 
         .header-direito {
-
             position: absolute;
 
-            right: 45px;
+            right: 50px;
+            top: 50%;
+
+            transform: translateY(-50%);
 
             display: flex;
-
             align-items: center;
 
-            gap: 25px;
+            gap: 30px;
         }
 
-
         .icone-header {
-
             display: flex;
-
             flex-direction: column;
-
             align-items: center;
+            justify-content: center;
 
-            gap: 4px;
-
-            color: var(--azul-escuro);
-
-            font-size: 13px;
-
-            font-weight: 700;
+            gap: 5px;
 
             text-decoration: none;
 
-            transition: 0.25s;
-        }
+            color: #006c8c;
 
+            font-size: 13px;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
 
         .icone-header i {
-
-            font-size: 24px;
-
-            color: var(--azul);
+            font-size: 23px;
         }
 
-
         .icone-header:hover {
-
-            color: var(--azul);
-
+            color: #33b6de;
             transform: translateY(-2px);
         }
 
 
-        /* ==================================
-           NAV
-        ================================== */
+        /* =========================================
+           MENU
+        ========================================= */
 
         .nav {
-
             width: 100%;
 
-            background: var(--azul-escuro);
+            background-color: #006c8c;
 
-            box-shadow:
-                    0 3px 10px rgba(0, 108, 140, 0.20);
+            box-shadow: 0 3px 8px rgba(0, 108, 140, 0.2);
+
+            z-index: 9;
         }
 
-
         .nav-container {
-
             min-height: 58px;
 
             display: flex;
-
+            justify-content: center;
             align-items: center;
 
-            justify-content: center;
-
-            gap: 4px;
+            gap: 8px;
         }
 
-
         .nav-link {
-
-            min-height: 58px;
+            height: 58px;
 
             padding: 0 22px;
 
             display: flex;
-
             align-items: center;
 
             gap: 8px;
 
+            text-decoration: none;
+
             color: white;
 
             font-size: 15px;
+            font-weight: bold;
 
-            font-weight: 700;
-
-            text-decoration: none;
+            transition: 0.3s;
 
             position: relative;
-
-            transition: 0.25s;
         }
 
-
-        .nav-link:hover,
-        .nav-link.ativo {
-
-            background: var(--azul);
+        .nav-link i {
+            font-size: 15px;
         }
 
+        .nav-link:hover {
+            background-color: #33b6de;
+            color: white;
+        }
 
         .nav-link::after {
-
             content: "";
 
             position: absolute;
 
             bottom: 0;
-
             left: 50%;
 
             width: 0;
-
             height: 4px;
 
-            background: var(--rosa);
+            background-color: #FAB9DA;
+
+            transition: 0.3s;
 
             transform: translateX(-50%);
+        }
 
-            transition: 0.25s;
+        .nav-link:hover::after {
+            width: 70%;
         }
 
 
-        .nav-link:hover::after,
-        .nav-link.ativo::after {
+        /* =========================================
+           RESPONSIVO
+        ========================================= */
 
-            width: 70%;
+        @media (max-width: 900px) {
+
+            .header {
+                height: 90px;
+                padding: 0 20px;
+            }
+
+            .logo-container img {
+                width: 180px;
+                height: 70px;
+            }
+
+            .header-direito {
+                right: 20px;
+                gap: 18px;
+            }
+
+            .nav-container {
+                flex-wrap: wrap;
+                gap: 0;
+            }
+
+            .nav-link {
+                padding: 0 12px;
+                font-size: 13px;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .header {
+                height: 80px;
+                padding: 0 15px;
+            }
+
+            .logo-container {
+                position: absolute;
+                left: 50%;
+
+                transform: translateX(-50%);
+            }
+
+            .logo-container img {
+                width: 150px;
+                height: 65px;
+            }
+
+            .header-direito {
+                right: 15px;
+                gap: 12px;
+            }
+
+            .icone-header span {
+                display: none;
+            }
+
+            .icone-header i {
+                font-size: 21px;
+            }
+
+            .nav {
+                overflow-x: auto;
+            }
+
+            .nav-container {
+                width: max-content;
+
+                min-height: 50px;
+
+                flex-wrap: nowrap;
+            }
+
+            .nav-link {
+                height: 50px;
+                padding: 0 14px;
+            }
         }
 
 
@@ -465,16 +503,16 @@ function test_input($data)
 
             max-width: 650px;
 
-            margin: 40px auto;
+            background: #ffffff;
 
             padding: 35px;
 
-            background: white;
+            margin: 30px auto;
 
             border-radius: 20px;
 
             box-shadow:
-                    0 10px 30px rgba(0, 108, 140, 0.20);
+                    0 10px 30px rgba(0, 108, 140, 0.12);
         }
 
 
@@ -486,7 +524,7 @@ function test_input($data)
 
             text-align: center;
 
-            color: var(--azul-escuro);
+            color: #006c8c;
 
             font-size: 30px;
 
@@ -498,7 +536,7 @@ function test_input($data)
 
             text-align: center;
 
-            color: var(--azul);
+            color: #33b6de;
 
             font-size: 15px;
 
@@ -522,7 +560,7 @@ function test_input($data)
 
             margin-bottom: 8px;
 
-            color: var(--azul-escuro);
+            color: #006c8c;
 
             font-size: 15px;
 
@@ -542,13 +580,13 @@ function test_input($data)
 
             padding: 13px 15px;
 
-            border: 2px solid var(--azul-claro);
+            border: 2px solid #78dfff;
 
             border-radius: 10px;
 
-            background: white;
+            background: #ffffff;
 
-            color: var(--azul-escuro);
+            color: #006c8c;
 
             font-size: 15px;
 
@@ -562,10 +600,12 @@ function test_input($data)
         input[type="number"]:focus,
         textarea:focus {
 
-            border-color: var(--azul);
+            border-color: #33b6de;
+
+            background: #ffffff;
 
             box-shadow:
-                    0 0 0 3px rgba(120, 223, 255, 0.20);
+                    0 0 0 3px rgba(120, 223, 255, 0.15);
         }
 
 
@@ -582,7 +622,7 @@ function test_input($data)
 
 
         /* ==================================
-           OPÇÕES
+           RADIO BUTTONS
         ================================== */
 
         .opcoes {
@@ -615,13 +655,19 @@ function test_input($data)
 
             padding: 10px 17px;
 
-            background: var(--verde);
+            margin: 0;
 
-            border: 2px solid var(--azul-claro);
+            background: #b9e39a;
+
+            border: 2px solid #78dfff;
 
             border-radius: 25px;
 
-            color: var(--azul-escuro);
+            color: #006c8c;
+
+            font-size: 14px;
+
+            font-weight: normal;
 
             cursor: pointer;
 
@@ -631,19 +677,19 @@ function test_input($data)
 
         .opcao label:hover {
 
-            background: var(--azul-claro);
+            background: #78dfff;
 
-            border-color: var(--azul);
+            border-color: #33b6de;
         }
 
 
         .opcao input:checked + label {
 
-            background: var(--azul);
+            background: #33b6de;
 
-            border-color: var(--azul);
+            border-color: #33b6de;
 
-            color: white;
+            color: #006c8c;
 
             font-weight: bold;
         }
@@ -659,11 +705,9 @@ function test_input($data)
 
             margin-top: 6px;
 
-            color: #e00000;
+            color: #ff0000;
 
             font-size: 13px;
-
-            font-weight: bold;
         }
 
 
@@ -685,11 +729,11 @@ function test_input($data)
 
             background: linear-gradient(
                     135deg,
-                    var(--azul),
-                    var(--azul-claro)
+                    #33b6de,
+                    #78dfff
             );
 
-            color: white;
+            color: #ffffff;
 
             font-size: 17px;
 
@@ -710,6 +754,12 @@ function test_input($data)
         }
 
 
+        .botao:active {
+
+            transform: translateY(0);
+        }
+
+
         /* ==================================
            RESPONSIVIDADE
         ================================== */
@@ -717,169 +767,387 @@ function test_input($data)
         @media (max-width: 900px) {
 
             .header-esquerdo {
-
                 display: none;
             }
 
-            .header-direito {
+            .header {
+                padding: 0 20px;
+            }
 
+            .header-direito {
                 right: 20px;
             }
 
             .nav-container {
-
                 flex-wrap: wrap;
+
+                gap: 0;
             }
+
+            .nav-link {
+                padding: 0 12px;
+
+                font-size: 13px;
+            }
+
         }
 
 
         @media (max-width: 600px) {
 
             .header {
-
-                min-height: 85px;
+                height: 85px;
             }
 
-            .logo-container img {
-
-                width: 180px;
-
-                height: 70px;
+            .header-direito {
+                gap: 15px;
             }
 
             .icone-header span {
-
                 display: none;
             }
 
-            .nav {
+            .icone-header i {
+                font-size: 22px;
+            }
 
+            .nav {
                 overflow-x: auto;
             }
 
             .nav-container {
-
                 width: max-content;
-
-                justify-content: flex-start;
 
                 flex-wrap: nowrap;
             }
 
             .nav-link {
-
-                min-height: 50px;
+                height: 50px;
 
                 padding: 0 14px;
             }
 
+
+            body {
+
+                padding: 0;
+            }
+
+
             .container {
 
-                margin: 20px 15px;
-
                 padding: 25px 20px;
+
+                margin: 15px;
             }
+
+
+            .titulo {
+
+                font-size: 25px;
+            }
+
 
             .opcoes {
 
                 flex-direction: column;
             }
 
+
             .opcao label {
+
+                width: 100%;
 
                 text-align: center;
             }
         }
 
-        /* =========================================
-   FOOTER
-========================================= */
+        /* ==================================================
+           FOOTER
+        ================================================== */
 
         .footer {
-            background: var(--azul-claro);
-            color: #000;
             width: 100%;
-            margin-top: auto;
+
+            margin-top: 60px;
+
+            background: #78dfff;
+
+            color: #17212b;
+
+            border-top: 3px solid #33b6de;
         }
 
+
+        /* ==================================================
+           CONTAINER PRINCIPAL DO FOOTER
+        ================================================== */
+
         .footer-container {
-            max-width: 1200px;
+            width: min(1200px, 92%);
+
             margin: 0 auto;
-            padding: 45px 35px;
+
+            padding: 55px 40px;
+
             display: grid;
-            grid-template-columns: 1.2fr 1fr 0.8fr;
-            gap: 50px;
+
+            grid-template-columns:
+        1.3fr
+        1fr
+        0.8fr;
+
+            gap: 70px;
+
+            align-items: start;
+        }
+
+
+        /* ==================================================
+           SEÇÕES
+        ================================================== */
+
+        .footer-section {
+            min-width: 0;
         }
 
         .footer-section h3 {
-            font-size: 19px;
-            color: #000;
-            margin-bottom: 14px;
+            margin: 0 0 18px;
+
+            color: #006c8c;
+
+            font-size: 21px;
+
+            font-weight: 700;
+
+            line-height: 1.3;
         }
+
 
         .footer-section p {
+            margin: 0 0 11px;
+
             color: #17212b;
-            font-size: 14px;
+
+            font-size: 15px;
+
             line-height: 1.7;
-            margin-bottom: 7px;
         }
 
-        .footer-section i {
-            margin-right: 7px;
+
+        /* ==================================================
+           CONTATO
+        ================================================== */
+
+        .footer-contato p {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 10px;
         }
+
+
+        .footer-contato i {
+            width: 20px;
+
+            flex-shrink: 0;
+
+            margin-top: 4px;
+
+            color: #006c8c;
+
+            font-size: 16px;
+
+            text-align: center;
+        }
+
+
+        /* ==================================================
+           REDES SOCIAIS
+        ================================================== */
 
         .social-icons {
             display: flex;
-            gap: 12px;
-            margin: 10px 0 12px;
+
+            align-items: center;
+
+            gap: 14px;
+
+            margin: 5px 0 16px;
         }
+
 
         .social-icons a {
-            width: 42px;
-            height: 42px;
+            width: 46px;
+
+            height: 46px;
+
             border-radius: 50%;
-            background: var(--azul);
-            color: #000;
+
+            background: #33b6de;
+
+            color: #ffffff;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
-            font-size: 19px;
-            transition: 0.25s;
+
+            font-size: 20px;
+
+            text-decoration: none;
+
+            transition:
+                    transform 0.25s ease,
+                    background 0.25s ease;
         }
 
+
         .social-icons a:hover {
-            background: white;
+            background: #006c8c;
+
+            color: #ffffff;
+
             transform: translateY(-3px);
         }
 
-        .footer-bottom {
-            background: var(--azul);
-            text-align: center;
-            padding: 15px 20px;
+
+        .redes-texto {
+            color: #17212b !important;
+
+            font-size: 15px !important;
         }
+
+
+        /* ==================================================
+           RODAPÉ INFERIOR
+        ================================================== */
+
+        .footer-bottom {
+            width: 100%;
+
+            padding: 18px 25px;
+
+            background: #006c8c;
+
+            text-align: center;
+        }
+
 
         .footer-bottom p {
             margin: 0;
-            color: #000;
-            font-size: 13px;
+
+            color: #ffffff;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+        }
+
+
+        /* ==================================================
+           TABLET
+        ================================================== */
+
+        @media (max-width: 950px) {
+
+            .footer-container {
+                width: 94%;
+
+                padding: 45px 25px;
+
+                grid-template-columns:
+            1fr
+            1fr;
+
+                gap: 40px;
+            }
+
+            .footer-escola {
+                grid-column: 1 / -1;
+            }
+
+        }
+
+
+        /* ==================================================
+           CELULAR
+        ================================================== */
+
+        @media (max-width: 650px) {
+
+            .footer {
+                margin-top: 40px;
+            }
+
+            .footer-container {
+                width: 92%;
+
+                padding: 40px 20px;
+
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+
+                text-align: center;
+            }
+
+            .footer-escola {
+                grid-column: auto;
+            }
+
+            .footer-section h3 {
+                font-size: 19px;
+            }
+
+            .footer-section p {
+                font-size: 14px;
+            }
+
+            .footer-contato p {
+                justify-content: center;
+
+                align-items: center;
+
+                text-align: left;
+            }
+
+            .footer-contato i {
+                margin-top: 0;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                padding: 16px 15px;
+            }
+
+            .footer-bottom p {
+                font-size: 12px;
+            }
+
         }
 
     </style>
 
 </head>
 
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <body>
 
-<!-- ================= HEADER ================= -->
 
 <header class="header">
 
+    <a href="../pagina_inicial/index_inicio%20-%20Copia.html"
+       class="logo-container">
 
-
-    <a href="../pagina_inicial/index_inicio%20-%20Copia.html" class="logo-container">
         <img src="../img/Logo-MUNDO-%20DOS%20-BICHOS-em-Verde-Pastel.png"
              alt="Mundo dos Bichos">
+
     </a>
 
     <div class="header-direito">
@@ -905,7 +1173,7 @@ function test_input($data)
 
     <div class="nav-container">
 
-        <a href="index_inicio - Copia.html.php" class="nav-link ativo">
+        <a href="../pagina_inicial/index_inicio%20-%20Copia.html" class="nav-link ativo">
             <i class="fa-solid fa-house"></i>
             Home
         </a>
@@ -940,24 +1208,17 @@ function test_input($data)
 </nav>
 
 
-<!-- ================= FORMULÁRIO ================= -->
-
 <div class="container">
 
     <h1 class="titulo">
         Cadastro do Pet
     </h1>
 
-    <p class="subtitulo">
-        Preencha os dados do seu amiguinho 🐾
-    </p>
 
-
-    <form method="post"
-          action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-
-
-        <!-- NOME -->
+    <form
+            method="post"
+            action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"
+    >
 
         <div class="campo">
 
@@ -969,22 +1230,19 @@ function test_input($data)
                     type="text"
                     id="nomedopet"
                     name="nomedopet"
-                    value="<?php echo htmlspecialchars($namePET); ?>"
                     placeholder="Digite o nome do pet"
             >
 
             <?php if (!empty($namePetErr)): ?>
 
                 <span class="error">
-                    <?php echo htmlspecialchars($namePetErr); ?>
-                </span>
+                        <?php echo htmlspecialchars($namePetErr); ?>
+                    </span>
 
             <?php endif; ?>
 
         </div>
 
-
-        <!-- ESPÉCIE -->
 
         <div class="campo">
 
@@ -992,7 +1250,9 @@ function test_input($data)
                 Espécie
             </label>
 
+
             <div class="opcoes">
+
 
                 <div class="opcao">
 
@@ -1001,7 +1261,12 @@ function test_input($data)
                             id="gato"
                             name="especiedopet"
                             value="gato"
-                            <?php if ($especie == "gato") echo "checked"; ?>
+
+                            <?php
+                            if ($especie == "gato") {
+                                echo "checked";
+                            }
+                            ?>
                     >
 
                     <label for="gato">
@@ -1018,7 +1283,12 @@ function test_input($data)
                             id="cao"
                             name="especiedopet"
                             value="cao"
-                            <?php if ($especie == "cao") echo "checked"; ?>
+
+                            <?php
+                            if ($especie == "cao") {
+                                echo "checked";
+                            }
+                            ?>
                     >
 
                     <label for="cao">
@@ -1035,7 +1305,12 @@ function test_input($data)
                             id="coelho"
                             name="especiedopet"
                             value="coelho"
-                            <?php if ($especie == "coelho") echo "checked"; ?>
+
+                            <?php
+                            if ($especie == "coelho") {
+                                echo "checked";
+                            }
+                            ?>
                     >
 
                     <label for="coelho">
@@ -1052,7 +1327,12 @@ function test_input($data)
                             id="passaro"
                             name="especiedopet"
                             value="passaro"
-                            <?php if ($especie == "passaro") echo "checked"; ?>
+
+                            <?php
+                            if ($especie == "passaro") {
+                                echo "checked";
+                            }
+                            ?>
                     >
 
                     <label for="passaro">
@@ -1068,8 +1348,13 @@ function test_input($data)
                             type="radio"
                             id="outro"
                             name="especiedopet"
-                            value="outro"
-                            <?php if ($especie == "outro") echo "checked"; ?>
+                            value="other"
+
+                            <?php
+                            if ($especie == "other") {
+                                echo "checked";
+                            }
+                            ?>
                     >
 
                     <label for="outro">
@@ -1084,15 +1369,13 @@ function test_input($data)
             <?php if (!empty($especieErr)): ?>
 
                 <span class="error">
-                    <?php echo htmlspecialchars($especieErr); ?>
-                </span>
+                        <?php echo htmlspecialchars($especieErr); ?>
+                    </span>
 
             <?php endif; ?>
 
         </div>
 
-
-        <!-- RAÇA -->
 
         <div class="campo">
 
@@ -1103,7 +1386,7 @@ function test_input($data)
             <input
                     type="text"
                     id="raca"
-                    name="raca"
+                    name="raça"
                     value="<?php echo htmlspecialchars($raca); ?>"
                     placeholder="Ex.: Golden Retriever"
             >
@@ -1111,15 +1394,12 @@ function test_input($data)
             <?php if (!empty($racaErr)): ?>
 
                 <span class="error">
-                    <?php echo htmlspecialchars($racaErr); ?>
-                </span>
+                        <?php echo htmlspecialchars($racaErr); ?>
+                    </span>
 
             <?php endif; ?>
 
         </div>
-
-
-        <!-- PESO -->
 
         <div class="campo">
 
@@ -1140,24 +1420,23 @@ function test_input($data)
             <?php if (!empty($pesoErr)): ?>
 
                 <span class="error">
-                    <?php echo htmlspecialchars($pesoErr); ?>
-                </span>
+                        <?php echo htmlspecialchars($pesoErr); ?>
+                    </span>
 
             <?php endif; ?>
 
         </div>
 
 
-        <!-- GÊNERO -->
-
         <div class="campo">
 
             <label>
-                Gênero
+                Genêro
             </label>
 
 
             <div class="opcoes">
+
 
                 <div class="opcao">
 
@@ -1166,7 +1445,12 @@ function test_input($data)
                             id="feminino"
                             name="sexo"
                             value="female"
-                            <?php if ($gender == "female") echo "checked"; ?>
+
+                            <?php
+                            if ($gender == "female") {
+                                echo "checked";
+                            }
+                            ?>
                     >
 
                     <label for="feminino">
@@ -1183,7 +1467,12 @@ function test_input($data)
                             id="masculino"
                             name="sexo"
                             value="male"
-                            <?php if ($gender == "male") echo "checked"; ?>
+
+                            <?php
+                            if ($gender == "male") {
+                                echo "checked";
+                            }
+                            ?>
                     >
 
                     <label for="masculino">
@@ -1200,7 +1489,12 @@ function test_input($data)
                             id="outro-sexo"
                             name="sexo"
                             value="other"
-                            <?php if ($gender == "other") echo "checked"; ?>
+
+                            <?php
+                            if ($gender == "other") {
+                                echo "checked";
+                            }
+                            ?>
                     >
 
                     <label for="outro-sexo">
@@ -1209,21 +1503,20 @@ function test_input($data)
 
                 </div>
 
+
             </div>
 
 
             <?php if (!empty($genderErr)): ?>
 
                 <span class="error">
-                    <?php echo htmlspecialchars($genderErr); ?>
-                </span>
+                        <?php echo htmlspecialchars($genderErr); ?>
+                    </span>
 
             <?php endif; ?>
 
         </div>
 
-
-        <!-- OBSERVAÇÕES -->
 
         <div class="campo">
 
@@ -1239,16 +1532,13 @@ function test_input($data)
 
         </div>
 
-
-        <!-- BOTÃO -->
-
-        <button type="submit" class="botao">
-
-            <i class="fa-solid fa-paw"></i>
-
+        <button
+                type="submit"
+                class="botao"
+        >
             Cadastrar meu Pet!
-
         </button>
+
 
     </form>
 
@@ -1259,6 +1549,7 @@ function test_input($data)
 <footer class="footer">
 
     <div class="footer-container">
+
 
         <div class="footer-section">
 
@@ -1307,8 +1598,11 @@ function test_input($data)
 
             <div class="social-icons">
 
-                <a href="#" aria-label="Instagram">
+                <a href="#"
+                   aria-label="Instagram">
+
                     <i class="fa-brands fa-instagram"></i>
+
                 </a>
 
                 <a href="https://www.facebook.com/pages/Escola-Estadual-Maria-Luiza-Miranda-Bastos/196619360362700"

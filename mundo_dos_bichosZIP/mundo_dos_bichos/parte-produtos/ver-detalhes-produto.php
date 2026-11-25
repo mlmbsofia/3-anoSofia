@@ -28,8 +28,6 @@
 
 <header class="header">
 
-
-
     <a href="../pagina_inicial/index_inicio%20-%20Copia.html" class="logo-container">
         <img src="../img/Logo-MUNDO-%20DOS%20-BICHOS-em-Verde-Pastel.png"
              alt="Mundo dos Bichos">
@@ -120,7 +118,7 @@
             </div>
 
             <img
-                src="imagens/premier-biscoitos.png"
+                src="img_produto/biscoitos-crocantesCaes.jpg"
                 alt="Pacote de biscoitos crocantes PremieR para cães adultos"
             >
 
@@ -255,7 +253,7 @@
                     Produto para cães adultos
                 </strong>
 
-                <a href="#" class="botao-comprar">
+                <a href="../pagina_inicial/carrinho.php" class="botao-comprar">
                     🛒 Comprar produto
                 </a>
 

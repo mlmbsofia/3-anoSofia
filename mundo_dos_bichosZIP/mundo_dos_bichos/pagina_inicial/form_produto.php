@@ -698,7 +698,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div class="nav-container">
 
-        <a href="index_inicio - Copia.html.php" class="nav-link ativo">
+        <a href="../pagina_inicial/index_inicio%20-%20Copia.html" class="nav-link ativo">
             <i class="fa-solid fa-house"></i>
             Home
         </a>

@@ -121,7 +121,7 @@ function verificar_entrada($entrada)
 
     <div class="nav-container">
 
-        <a href="index_inicio - Copia.html.php" class="nav-link ativo">
+        <a href="../pagina_inicial/index_inicio%20-%20Copia.html" class="nav-link ativo">
             <i class="fa-solid fa-house"></i>
             Home
         </a>
@@ -234,7 +234,7 @@ function verificar_entrada($entrada)
             </button>
 
             <button type="submit">
-                <a href="cadastroPet.php" style="text-decoration: none; color: #fff0f7;">
+                <a href="forms.php" style="text-decoration: none; color: #fff0f7;">
                     Cadastre seu Pet
                 </a>
             </button>

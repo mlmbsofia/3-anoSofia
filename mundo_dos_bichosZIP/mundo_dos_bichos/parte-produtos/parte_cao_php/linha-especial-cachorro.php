@@ -79,8 +79,7 @@ $produtos = [
 
                 <div class="imagem">
 
-                    <img src="<?php echo $produto['imagem']; ?>"
-                         alt="<?php echo $produto['nome']; ?>">
+                    <img src="../img_produto/caminha-de-cachorro.jpg" alt="<?php echo $produto['nome']; ?>">
 
                 </div>
 
@@ -106,11 +105,11 @@ $produtos = [
 
                     <div class="botoes">
 
-                        <a href="#">
+                        <a href="../ver-detalhes-produto.php">
                             Ver detalhes
                         </a>
 
-                        <a href="#">
+                        <a href="../../pagina_inicial/carrinho.php">
                             🛒 Adicionar
                         </a>
 

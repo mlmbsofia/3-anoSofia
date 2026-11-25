@@ -105,11 +105,11 @@ $produtos = [
 
                     <div class="botoes">
 
-                        <a href="#">
+                        <a href="../ver-detalhes-produto.php">
                             Ver detalhes
                         </a>
 
-                        <a href="#">
+                        <a href="../../pagina_inicial/carrinho.php">
                             🛒 Adicionar
                         </a>
 

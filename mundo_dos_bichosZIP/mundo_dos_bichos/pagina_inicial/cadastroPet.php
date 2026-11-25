@@ -3,335 +3,273 @@
 session_start();
 
 
-// ==============================
-// VERIFICA SE EXISTEM DADOS
-// ==============================
+// Verifica se existem dados do pet
 
 if (!isset($_SESSION["pet"])) {
 
     header("Location: forms.php");
-
     exit;
+
 }
 
 
-// ==============================
-// RECUPERA OS DADOS
-// ==============================
+
+
+// Recupera os dados
 
 $pet = $_SESSION["pet"];
 
-$namePET = $pet["nome"] ?? "";
-$especie = $pet["especie"] ?? "";
-$raca = $pet["raca"] ?? "";
-$peso = $pet["peso"] ?? "";
-$gender = $pet["sexo"] ?? "";
-$observacao = $pet["observacao"] ?? "";
+$namePET = $pet["nome"];
+$especie = $pet["especie"];
+$raca = $pet["raca"];
+$peso = $pet["peso"];
+$gender = $pet["sexo"];
+$observacao = $pet["observacao"];
 
 ?>
 
+
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Cadastro realizado | Mundo dos Bichos</title>
-
-
-    <!-- FONT AWESOME -->
-
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <title>Cadastro realizado com sucesso!</title>
 
     <style>
 
-        /* ==================================
-           CORES
-        ================================== */
-
-        :root {
-
-            --azul-claro: #78dfff;
-            --azul: #33b6de;
-            --azul-escuro: #006c8c;
-            --verde: #bdeba2;
-            --rosa: #FAB9DA;
-        }
-
-
-        /* ==================================
-           RESET
-        ================================== */
-
         * {
-
-            margin: 0;
-
-            padding: 0;
-
             box-sizing: border-box;
         }
 
 
-        /* ==================================
-           BODY
-        ================================== */
-
         body {
+            margin: 0;
+
+            background: #78dfff;
+
+            font-family: Arial, sans-serif;
 
             min-height: 100vh;
-
-            display: flex;
-
-            flex-direction: column;
-
-            font-family: Arial, Helvetica, sans-serif;
-
-            background: linear-gradient(
-                    135deg,
-                    #e9fbff,
-                    #ffffff
-            );
-
-            color: #444;
         }
 
 
-        /* ==================================
-           HEADER
-        ================================== */
+        /* =========================================
+   HEADER
+========================================= */
 
         .header {
-
-            width: 100%;
-
-            min-height: 100px;
-
-            background: #bdeba2;
-
+            height: 100px;
+            background-color: #bdeba2;
             display: flex;
-
             align-items: center;
-
             justify-content: center;
-
             position: relative;
-
-            padding: 8px 50px;
-
-            border-bottom: 3px solid var(--azul-claro);
-
-            box-shadow:
-                    0 3px 15px rgba(0, 108, 140, 0.12);
+            padding: 0 50px;
+            border-bottom: 3px solid #78dfff;
+            box-shadow: 0 3px 12px rgba(0, 108, 140, 0.12);
         }
-
 
         .header-esquerdo {
-
             position: absolute;
-
-            left: 40px;
-
-            display: flex;
-
-            align-items: center;
+            left: 50px;
+            color: #006c8c;
+            font-size: 14px;
+            font-weight: bold;
         }
 
-
         .logo-pequeno {
-
             width: 103px;
-
             height: 82px;
-
             object-fit: contain;
         }
 
-
         .logo-container {
-
             display: flex;
-
             align-items: center;
-
             justify-content: center;
         }
 
-
         .logo-container img {
-
             width: 250px;
-
             height: 92px;
-
             object-fit: contain;
         }
 
-
         .header-direito {
-
             position: absolute;
-
-            right: 45px;
-
+            right: 50px;
             display: flex;
-
             align-items: center;
-
-            gap: 25px;
+            gap: 28px;
         }
-
 
         .icone-header {
-
             display: flex;
-
             flex-direction: column;
-
             align-items: center;
-
-            gap: 4px;
-
-            color: var(--azul-escuro);
-
-            font-size: 13px;
-
-            font-weight: 700;
-
+            gap: 5px;
             text-decoration: none;
-
-            transition: 0.25s;
+            color: #006c8c;
+            font-size: 13px;
+            font-weight: bold;
+            transition: 0.3s;
         }
-
 
         .icone-header i {
-
-            font-size: 24px;
-
-            color: var(--azul);
+            font-size: 23px;
         }
 
-
         .icone-header:hover {
-
-            color: var(--azul);
-
+            color: #33b6de;
             transform: translateY(-2px);
         }
 
+        .icone-header:first-child i {
+            color: #33b6de;
+        }
 
-        /* ==================================
-           NAV
-        ================================== */
+        .perfil i {
+            color: #006c8c;
+        }
+
+        .perfil:hover i {
+            color: #FAB9DA;
+        }
+
+
+        /* =========================================
+           MENU
+        ========================================= */
 
         .nav {
-
+            background-color: #006c8c;
             width: 100%;
-
-            background: var(--azul-escuro);
-
-            box-shadow:
-                    0 3px 10px rgba(0, 108, 140, 0.20);
+            box-shadow: 0 3px 8px rgba(0, 108, 140, 0.2);
         }
-
 
         .nav-container {
-
             min-height: 58px;
-
             display: flex;
-
-            align-items: center;
-
             justify-content: center;
-
-            gap: 4px;
+            align-items: center;
+            gap: 8px;
         }
-
 
         .nav-link {
-
-            min-height: 58px;
-
+            height: 58px;
             padding: 0 22px;
-
             display: flex;
-
             align-items: center;
-
             gap: 8px;
-
-            color: white;
-
-            font-size: 15px;
-
-            font-weight: 700;
-
             text-decoration: none;
-
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            transition: 0.3s;
             position: relative;
-
-            transition: 0.25s;
         }
 
+        .nav-link i {
+            font-size: 15px;
+        }
 
         .nav-link:hover {
-
-            background: var(--azul);
+            background-color: #33b6de;
+            color: white;
         }
-
 
         .nav-link::after {
-
             content: "";
-
             position: absolute;
-
             bottom: 0;
-
             left: 50%;
-
             width: 0;
-
             height: 4px;
-
-            background: var(--rosa);
-
+            background-color: #FAB9DA;
+            transition: 0.3s;
             transform: translateX(-50%);
-
-            transition: 0.25s;
         }
 
-
         .nav-link:hover::after {
-
             width: 70%;
         }
 
 
-        /* ==================================
-           CONTEÚDO
-        ================================== */
+        /* =========================================
+           RESPONSIVO DO HEADER
+        ========================================= */
 
-        main {
+        @media (max-width: 900px) {
 
-            flex: 1;
+            .header-esquerdo {
+                display: none;
+            }
 
-            width: 100%;
+            .header {
+                padding: 0 20px;
+            }
 
-            display: flex;
+            .header-direito {
+                right: 20px;
+            }
 
-            align-items: center;
+            .logo span {
+                display: none;
+            }
 
-            justify-content: center;
+            .nav-container {
+                flex-wrap: wrap;
+                gap: 0;
+            }
 
-            padding: 55px 20px;
+            .nav-link {
+                padding: 0 12px;
+                font-size: 13px;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .header {
+                height: 85px;
+            }
+
+            .header-direito {
+                gap: 15px;
+            }
+
+            .icone-header span {
+                display: none;
+            }
+
+            .icone-header i {
+                font-size: 22px;
+            }
+
+            .logo-icone {
+                width: 43px;
+                height: 43px;
+            }
+
+            .nav {
+                overflow-x: auto;
+            }
+
+            .nav-container {
+                width: max-content;
+                flex-wrap: nowrap;
+            }
+
+            .nav-link {
+                height: 50px;
+                padding: 0 14px;
+            }
         }
 
 
@@ -340,191 +278,205 @@ $observacao = $pet["observacao"] ?? "";
         ================================== */
 
         .card {
-
-            width: 100%;
-
-            max-width: 620px;
-
             background: white;
 
             padding: 40px;
 
-            border-radius: 25px;
+            border-radius: 15px;
+
+            box-shadow: 0 10px 30px rgba(0, 108, 140, 0.25);
+
+            width: 400px;
+
+            max-width: 90%;
 
             text-align: center;
 
-            border: 2px solid #e2f7fc;
-
-            border-top: 7px solid var(--verde);
-
-            box-shadow:
-                    0 12px 35px rgba(0, 108, 140, 0.13);
+            margin: 40px auto;
         }
 
 
-        /* ==================================
-           ÍCONE
-        ================================== */
-
         .icone {
+            width: 70px;
 
-            width: 85px;
+            height: 70px;
 
-            height: 85px;
+            margin: 0 auto 20px;
 
-            margin: 0 auto 18px;
+            background: #33b6de;
+
+            color: white;
 
             border-radius: 50%;
 
             display: flex;
 
-            align-items: center;
-
             justify-content: center;
 
-            background: var(--verde);
+            align-items: center;
 
-            color: var(--azul-escuro);
-
-            font-size: 45px;
-
-            font-weight: bold;
+            font-size: 35px;
         }
 
 
-        /* ==================================
-           TÍTULO
-        ================================== */
-
-        .card h2 {
-
-            color: var(--azul-escuro);
-
-            font-size: 29px;
+        h2 {
+            color: #006c8c;
 
             margin-bottom: 10px;
         }
 
 
         .mensagem {
+            color: #006c8c;
 
-            color: #777;
-
-            font-size: 16px;
+            font-size: 17px;
 
             margin-bottom: 25px;
         }
 
 
-        /* ==================================
-           DADOS
-        ================================== */
-
         .dados {
+            background: #b9e39a;
 
-            background: #f2fbff;
+            padding: 15px;
 
-            border: 1px solid #d5f1fa;
-
-            border-radius: 18px;
-
-            padding: 20px;
-
-            text-align: left;
+            border-radius: 10px;
 
             margin-bottom: 25px;
+
+            text-align: left;
         }
 
 
         .dados p {
-
-            padding: 10px 0;
-
-            border-bottom: 1px solid #dceff5;
+            margin: 8px 0;
 
             font-size: 16px;
+
+            color: #006c8c;
         }
 
-
-        .dados p:last-child {
-
-            border-bottom: none;
-        }
-
-
-        .dados strong {
-
-            color: var(--azul-escuro);
-
-            margin-right: 5px;
-        }
-
-
-        /* ==================================
-           BOTÕES
-        ================================== */
 
         .botoes {
-
             display: flex;
 
-            justify-content: center;
+            flex-direction: column;
 
-            flex-wrap: wrap;
-
-            gap: 12px;
+            gap: 10px;
         }
 
 
         .botao {
+            display: block;
 
-            display: inline-flex;
+            padding: 12px 20px;
 
-            align-items: center;
-
-            justify-content: center;
-
-            gap: 8px;
-
-            padding: 13px 20px;
-
-            border-radius: 12px;
-
-            background: var(--azul-escuro);
+            background: #33b6de;
 
             color: white;
 
             text-decoration: none;
 
-            font-size: 15px;
+            border-radius: 8px;
 
-            font-weight: bold;
+            font-size: 16px;
 
-            transition: 0.25s;
+            transition: 0.3s;
         }
 
 
         .botao:hover {
-
-            background: var(--azul);
-
-            transform: translateY(-2px);
+            background: #006c8c;
         }
 
 
         .botao.secundario {
+            background: #78dfff;
 
-            background: var(--rosa);
-
-            color: #59364a;
+            color: #006c8c;
         }
 
 
         .botao.secundario:hover {
-
-            background: #f5a4ce;
+            background: #b9e39a;
         }
 
+
+        /* ==================================
+           RESPONSIVIDADE
+        ================================== */
+
+        @media (max-width: 900px) {
+
+            .header-esquerdo {
+                display: none;
+            }
+
+            .header {
+                padding: 0 20px;
+            }
+
+            .header-direito {
+                right: 20px;
+            }
+
+            .nav-container {
+                flex-wrap: wrap;
+
+                gap: 0;
+            }
+
+            .nav-link {
+                padding: 0 12px;
+
+                font-size: 13px;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .header {
+                height: 85px;
+            }
+
+            .header-direito {
+                gap: 15px;
+            }
+
+            .icone-header span {
+                display: none;
+            }
+
+            .icone-header i {
+                font-size: 22px;
+            }
+
+            .nav {
+                overflow-x: auto;
+            }
+
+            .nav-container {
+                width: max-content;
+
+                flex-wrap: nowrap;
+            }
+
+            .nav-link {
+                height: 50px;
+
+                padding: 0 14px;
+            }
+
+
+            .card {
+                padding: 30px 20px;
+
+                margin: 25px auto;
+            }
+
+        }
 
         /* =========================================
    FOOTER
@@ -893,6 +845,276 @@ $observacao = $pet["observacao"] ?? "";
 
         }
 
+        /* ==================================================
+           FOOTER
+        ================================================== */
+
+        .footer {
+            width: 100%;
+
+            margin-top: 60px;
+
+            background: #78dfff;
+
+            color: #17212b;
+
+            border-top: 3px solid #33b6de;
+        }
+
+
+        /* ==================================================
+           CONTAINER PRINCIPAL DO FOOTER
+        ================================================== */
+
+        .footer-container {
+            width: min(1200px, 92%);
+
+            margin: 0 auto;
+
+            padding: 55px 40px;
+
+            display: grid;
+
+            grid-template-columns:
+        1.3fr
+        1fr
+        0.8fr;
+
+            gap: 70px;
+
+            align-items: start;
+        }
+
+
+        /* ==================================================
+           SEÇÕES
+        ================================================== */
+
+        .footer-section {
+            min-width: 0;
+        }
+
+        .footer-section h3 {
+            margin: 0 0 18px;
+
+            color: #006c8c;
+
+            font-size: 21px;
+
+            font-weight: 700;
+
+            line-height: 1.3;
+        }
+
+
+        .footer-section p {
+            margin: 0 0 11px;
+
+            color: #17212b;
+
+            font-size: 15px;
+
+            line-height: 1.7;
+        }
+
+
+        /* ==================================================
+           CONTATO
+        ================================================== */
+
+        .footer-contato p {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 10px;
+        }
+
+
+        .footer-contato i {
+            width: 20px;
+
+            flex-shrink: 0;
+
+            margin-top: 4px;
+
+            color: #006c8c;
+
+            font-size: 16px;
+
+            text-align: center;
+        }
+
+
+        /* ==================================================
+           REDES SOCIAIS
+        ================================================== */
+
+        .social-icons {
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+            margin: 5px 0 16px;
+        }
+
+
+        .social-icons a {
+            width: 46px;
+
+            height: 46px;
+
+            border-radius: 50%;
+
+            background: #33b6de;
+
+            color: #ffffff;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 20px;
+
+            text-decoration: none;
+
+            transition:
+                    transform 0.25s ease,
+                    background 0.25s ease;
+        }
+
+
+        .social-icons a:hover {
+            background: #006c8c;
+
+            color: #ffffff;
+
+            transform: translateY(-3px);
+        }
+
+
+        .redes-texto {
+            color: #17212b !important;
+
+            font-size: 15px !important;
+        }
+
+
+        /* ==================================================
+           RODAPÉ INFERIOR
+        ================================================== */
+
+        .footer-bottom {
+            width: 100%;
+
+            padding: 18px 25px;
+
+            background: #006c8c;
+
+            text-align: center;
+        }
+
+
+        .footer-bottom p {
+            margin: 0;
+
+            color: #ffffff;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+        }
+
+
+        /* ==================================================
+           TABLET
+        ================================================== */
+
+        @media (max-width: 950px) {
+
+            .footer-container {
+                width: 94%;
+
+                padding: 45px 25px;
+
+                grid-template-columns:
+            1fr
+            1fr;
+
+                gap: 40px;
+            }
+
+            .footer-escola {
+                grid-column: 1 / -1;
+            }
+
+        }
+
+
+        /* ==================================================
+           CELULAR
+        ================================================== */
+
+        @media (max-width: 650px) {
+
+            .footer {
+                margin-top: 40px;
+            }
+
+            .footer-container {
+                width: 92%;
+
+                padding: 40px 20px;
+
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+
+                text-align: center;
+            }
+
+            .footer-escola {
+                grid-column: auto;
+            }
+
+            .footer-section h3 {
+                font-size: 19px;
+            }
+
+            .footer-section p {
+                font-size: 14px;
+            }
+
+            .footer-contato p {
+                justify-content: center;
+
+                align-items: center;
+
+                text-align: left;
+            }
+
+            .footer-contato i {
+                margin-top: 0;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                padding: 16px 15px;
+            }
+
+            .footer-bottom p {
+                font-size: 12px;
+            }
+
+        }
+
     </style>
 
 </head>
@@ -904,8 +1126,6 @@ $observacao = $pet["observacao"] ?? "";
 <!-- ================= HEADER ================= -->
 
 <header class="header">
-
-
 
     <a href="../pagina_inicial/index_inicio%20-%20Copia.html" class="logo-container">
         <img src="../img/Logo-MUNDO-%20DOS%20-BICHOS-em-Verde-Pastel.png"
@@ -935,7 +1155,7 @@ $observacao = $pet["observacao"] ?? "";
 
     <div class="nav-container">
 
-        <a href="index_inicio - Copia.html.php" class="nav-link ativo">
+        <a href="../pagina_inicial/index_inicio%20-%20Copia.html" class="nav-link ativo">
             <i class="fa-solid fa-house"></i>
             Home
         </a>
@@ -970,129 +1190,86 @@ $observacao = $pet["observacao"] ?? "";
 </nav>
 
 
-<!-- ================= CONTEÚDO ================= -->
+<div class="card">
 
-<main>
+    <div class="icone">✓</div>
 
-    <div class="card">
+    <h2>Cadastro do pet realizado!</h2>
 
-        <div class="icone">
-            ✓
-        </div>
-
-
-        <h2>
-            Cadastro do pet realizado!
-        </h2>
+    <p class="mensagem">
+        O cadastro do seu pet foi realizado com sucesso.
+    </p>
 
 
-        <p class="mensagem">
-            O cadastro do seu pet foi realizado com sucesso.
+    <div class="dados">
+
+        <p>
+
+            <strong>Pet:</strong>
+
+            <?= htmlspecialchars($namePET) ?>
+
         </p>
 
 
-        <div class="dados">
+        <p>
 
-            <p>
+            <strong>Espécie:</strong>
 
-                <strong>
-                    <i class="fa-solid fa-paw"></i>
-                    Pet:
-                </strong>
+            <?= htmlspecialchars($especie) ?>
 
-                <?php echo htmlspecialchars($namePET); ?>
-
-            </p>
+        </p>
 
 
-            <p>
+        <p>
 
-                <strong>
-                    Espécie:
-                </strong>
+            <strong>Raça:</strong>
 
-                <?php echo htmlspecialchars($especie); ?>
+            <?= htmlspecialchars($raca) ?>
 
-            </p>
+        </p>
 
 
-            <p>
+        <p>
 
-                <strong>
-                    Raça:
-                </strong>
+            <strong>Peso:</strong>
 
-                <?php echo htmlspecialchars($raca); ?>
+            <?= htmlspecialchars($peso) ?>
 
-            </p>
+        </p>
 
 
-            <p>
+        <p>
 
-                <strong>
-                    Peso:
-                </strong>
+            <strong>Genêro:</strong>
 
-                <?php echo htmlspecialchars($peso); ?> kg
+            <?= htmlspecialchars($gender) ?>
 
-            </p>
-
-
-            <p>
-
-                <strong>
-                    Gênero:
-                </strong>
-
-                <?php echo htmlspecialchars($gender); ?>
-
-            </p>
-
-
-            <?php if (!empty($observacao)): ?>
-
-                <p>
-
-                    <strong>
-                        Observações:
-                    </strong>
-
-                    <?php echo htmlspecialchars($observacao); ?>
-
-                </p>
-
-            <?php endif; ?>
-
-        </div>
-
-
-        <div class="botoes">
-
-            <a href="index_inicio.html"
-               class="botao">
-
-                <i class="fa-solid fa-house"></i>
-
-                Página inicial
-
-            </a>
-
-
-            <a href="forms.php"
-               class="botao secundario">
-
-                <i class="fa-solid fa-plus"></i>
-
-                Cadastrar outro pet
-
-            </a>
-
-        </div>
+        </p>
 
     </div>
 
-</main>
 
+    <div class="botoes">
+
+        <a
+                href="index_inicio%20-%20Copia.html"
+                class="botao"
+        >
+            Voltar à página inicial
+        </a>
+
+
+        <a
+                href="forms.php"
+                class="botao secundario"
+        >
+            Cadastrar outro pet
+        </a>
+
+    </div>
+
+</div>
 
 <!-- ================= FOOTER ================= -->
 
@@ -1186,7 +1363,6 @@ $observacao = $pet["observacao"] ?? "";
     </div>
 
 </footer>
-
 
 </body>
 

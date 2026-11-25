@@ -45,109 +45,82 @@ body {
 ========================================= */
 
 .header {
-    width: 100%;
-    min-height: 100px;
-
-    background: #bdeba2;
-
+    height: 100px;
+    background-color: #bdeba2;
     display: flex;
     align-items: center;
     justify-content: center;
-
     position: relative;
-
-    padding: 8px 50px;
-
-    border-bottom: 3px solid var(--azul-claro);
-
-    box-shadow:
-            0 3px 15px rgba(0, 108, 140, 0.12);
+    padding: 0 50px;
+    border-bottom: 3px solid #78dfff;
+    box-shadow: 0 3px 12px rgba(0, 108, 140, 0.12);
 }
-
-
-/* LOGO PEQUENO */
 
 .header-esquerdo {
     position: absolute;
-
-    left: 40px;
-
-    display: flex;
-    align-items: center;
+    left: 50px;
+    color: #006c8c;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .logo-pequeno {
     width: 103px;
     height: 82px;
-
     object-fit: contain;
 }
 
-
-/* LOGO CENTRAL */
-
 .logo-container {
     display: flex;
-
     align-items: center;
     justify-content: center;
-
-    text-decoration: none;
 }
 
 .logo-container img {
     width: 250px;
     height: 92px;
-
     object-fit: contain;
 }
 
-
-/* =========================================
-   ÍCONES DO HEADER
-========================================= */
-
 .header-direito {
     position: absolute;
-
-    right: 45px;
-
+    right: 50px;
     display: flex;
     align-items: center;
-
-    gap: 25px;
+    gap: 28px;
 }
 
 .icone-header {
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
-    gap: 4px;
-
-    color: var(--azul-escuro);
-
-    font-size: 13px;
-
-    font-weight: 700;
-
+    gap: 5px;
     text-decoration: none;
-
-    transition: 0.25s;
+    color: #006c8c;
+    font-size: 13px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 .icone-header i {
-    font-size: 24px;
-
-    color: var(--azul);
+    font-size: 23px;
 }
 
 .icone-header:hover {
-    color: var(--azul);
-
+    color: #33b6de;
     transform: translateY(-2px);
+}
+
+.icone-header:first-child i {
+    color: #33b6de;
+}
+
+.perfil i {
+    color: #006c8c;
+}
+
+.perfil:hover i {
+    color: #FAB9DA;
 }
 
 
@@ -156,78 +129,129 @@ body {
 ========================================= */
 
 .nav {
+    background-color: #006c8c;
     width: 100%;
-
-    background: var(--azul-escuro);
-
-    box-shadow:
-            0 3px 10px rgba(0, 108, 140, 0.20);
+    box-shadow: 0 3px 8px rgba(0, 108, 140, 0.2);
 }
 
 .nav-container {
     min-height: 58px;
-
     display: flex;
-
-    align-items: center;
-
     justify-content: center;
-
-    gap: 4px;
+    align-items: center;
+    gap: 8px;
 }
 
 .nav-link {
-    min-height: 58px;
-
+    height: 58px;
     padding: 0 22px;
-
     display: flex;
-
     align-items: center;
-
     gap: 8px;
-
-    color: white;
-
-    font-size: 15px;
-
-    font-weight: 700;
-
     text-decoration: none;
-
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s;
     position: relative;
-
-    transition: 0.25s;
 }
 
-.nav-link:hover,
-.nav-link.ativo {
-    background: var(--azul);
+.nav-link i {
+    font-size: 15px;
+}
+
+.nav-link:hover {
+    background-color: #33b6de;
+    color: white;
 }
 
 .nav-link::after {
     content: "";
-
     position: absolute;
-
     bottom: 0;
-
     left: 50%;
-
     width: 0;
-
     height: 4px;
-
-    background: var(--rosa);
-
+    background-color: #FAB9DA;
+    transition: 0.3s;
     transform: translateX(-50%);
-
-    transition: 0.25s;
 }
 
-.nav-link:hover::after,
-.nav-link.ativo::after {
+.nav-link:hover::after {
     width: 70%;
+}
+
+
+/* =========================================
+   RESPONSIVO DO HEADER
+========================================= */
+
+@media (max-width: 900px) {
+
+    .header-esquerdo {
+        display: none;
+    }
+
+    .header {
+        padding: 0 20px;
+    }
+
+    .header-direito {
+        right: 20px;
+    }
+
+    .logo span {
+        display: none;
+    }
+
+    .nav-container {
+        flex-wrap: wrap;
+        gap: 0;
+    }
+
+    .nav-link {
+        padding: 0 12px;
+        font-size: 13px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .header {
+        height: 85px;
+    }
+
+    .header-direito {
+        gap: 15px;
+    }
+
+    .icone-header span {
+        display: none;
+    }
+
+    .icone-header i {
+        font-size: 22px;
+    }
+
+    .logo-icone {
+        width: 43px;
+        height: 43px;
+    }
+
+    .nav {
+        overflow-x: auto;
+    }
+
+    .nav-container {
+        width: max-content;
+        flex-wrap: nowrap;
+    }
+
+    .nav-link {
+        height: 50px;
+        padding: 0 14px;
+    }
 }
 
 

@@ -64,8 +64,6 @@ $dados = $categorias[$tipo];
 
 <header class="header">
 
-
-
     <a href="../pagina_inicial/index_inicio%20-%20Copia.html" class="logo-container">
         <img src="../img/Logo-MUNDO-%20DOS%20-BICHOS-em-Verde-Pastel.png"
              alt="Mundo dos Bichos">
@@ -134,7 +132,7 @@ $dados = $categorias[$tipo];
 
     <section class="animais">
 
-        <h2>Escolha o animal</h2>
+        <h2 style="font-family: bo">Escolha o animal</h2>
 
 
         <div class="animais-grid">
@@ -210,13 +208,15 @@ $dados = $categorias[$tipo];
 
         <div class="grupo-produtos" id="cachorros">
 
-            <h2>🐶 Produtos para Cachorros</h2>
+            <h2>Produtos para Cachorros</h2>
 
             <div class="produtos-grid">
 
                 <div class="produto">
 
-                    <div class="produto-img">🐶</div>
+                    <div class="produto-img">
+                        <img src="img_produto/cachorro%20com%20petisco.png" style="width: 50%; height: auto; border-radius: 10%;">
+                    </div>
 
                     <h3>
                         <?php echo $dados['titulo']; ?> para cães
@@ -226,14 +226,18 @@ $dados = $categorias[$tipo];
                         Produtos selecionados para cachorros.
                     </p>
 
-                    <button> <a href="parte_cao_php/petiscos-cachorro.php"> Ver produtos </a> </button>
+                    <button> <a href="parte_cao_php/petiscos-cachorro.php" style="text-decoration: none; color: #FFFFFF"> Ver produtos </a> </button>
 
                 </div>
 
 
                 <div class="produto">
 
-                    <div class="produto-img">🦴</div>
+                    <div class="produto-img">
+                        <div class="produto-img">
+                            <img src="img_produto/cachorro%20com%20escova%20de%20dente.png" style="width: 50%; height: auto; border-radius: 10%;">
+                        </div>
+                    </div>
 
                     <h3>
                         Cuidado para cães
@@ -243,14 +247,18 @@ $dados = $categorias[$tipo];
                         Opções para o bem-estar do seu pet.
                     </p>
 
-                    <button> <a href="parte_cao_php/cuidados-cahorro.php"> Ver produtos </a> </button>
+                    <button> <a href="parte_cao_php/cuidados-cahorro.php" style="text-decoration: none; color: #FFFFFF"> Ver produtos </a> </button>
 
                 </div>
 
 
                 <div class="produto">
 
-                    <div class="produto-img">🐕</div>
+                    <div class="produto-img">
+                        <div class="produto-img">
+                            <img src="img_produto/cachorro%20na%20caminha.png" style="width: 50%; height: auto; border-radius: 10%;">
+                        </div>
+                    </div>
 
                     <h3>
                         Linha especial
@@ -260,7 +268,7 @@ $dados = $categorias[$tipo];
                         Produtos pensados para cães.
                     </p>
 
-                    <button><a href="parte_cao_php/linha-especial-cachorro.php"> Ver produtos </a></button>
+                    <button><a href="parte_cao_php/linha-especial-cachorro.php" style="text-decoration: none; color: #FFFFFF"> Ver produtos </a></button>
 
                 </div>
 
@@ -274,13 +282,17 @@ $dados = $categorias[$tipo];
 
         <div class="grupo-produtos" id="gatos">
 
-            <h2>🐱 Produtos para Gatos</h2>
+            <h2>Produtos para Gatos</h2>
 
             <div class="produtos-grid">
 
                 <div class="produto">
 
-                    <div class="produto-img">🐱</div>
+                    <div class="produto-img">
+                        <div class="produto-img">
+                            <img src="img_produto/gato%20comendo%20ração.png" style="width: 120%; height: 90%; border-radius: 10%;">
+                        </div>
+                    </div>
 
                     <h3>
                         <?php echo $dados['titulo']; ?> para gatos
@@ -290,14 +302,18 @@ $dados = $categorias[$tipo];
                         Produtos especiais para gatos.
                     </p>
 
-                    <button><a href="parte_gato/petiscoGato.php"> Ver produtos </a></button>
+                    <button><a href="parte_gato/petiscoGato.php" style="text-decoration: none; color: #FFFFFF"> Ver produtos </a></button>
 
                 </div>
 
 
                 <div class="produto">
 
-                    <div class="produto-img">🐾</div>
+                    <div class="produto-img">
+                        <div class="produto-img">
+                            <img src="img_produto/gato%20com%20escova%20de%20pelos.png" style="width: 120%; height: 90%; border-radius: 10%;">
+                        </div>
+                    </div>
 
                     <h3>
                         Cuidados para gatos
@@ -307,7 +323,7 @@ $dados = $categorias[$tipo];
                         Produtos para o conforto do seu gato.
                     </p>
 
-                    <button><a href="parte_gato/cuidadosGato.php"> Ver produtos </a></button>
+                    <button><a href="parte_gato/cuidadosGato.php" style="text-decoration: none; color: #FFFFFF"> Ver produtos </a></button>
 
                 </div>
 
@@ -316,18 +332,22 @@ $dados = $categorias[$tipo];
         </div>
 
 
-
+    <div class="grupo-pequeno" style="display: flex; align-items: center; justify-content: center;  padding: 0 100px ;">
         <!-- AVES -->
 
         <div class="grupo-produtos" id="aves">
 
-            <h2>🐦 Produtos para Aves</h2>
+            <h2>   Produtos para Aves</h2>
 
             <div class="produtos-grid">
 
                 <div class="produto">
 
-                    <div class="produto-img">🐦</div>
+                    <div class="produto-img">
+                        <div class="produto-img">
+                            <img src="img_produto/passarinho%20comendo.png" style="width: 140%; height: 100%; border-radius: 10%;">
+                        </div>
+                    </div>
 
                     <h3>
                         <?php echo $dados['titulo']; ?> para aves
@@ -337,7 +357,7 @@ $dados = $categorias[$tipo];
                         Opções adequadas para aves.
                     </p>
 
-                    <button><a href="parte_aves/petiscoAve.php"> Ver produtos </a></button>
+                    <button><a href="parte_aves/petiscoAve.php" style="text-decoration: none; color: #FFFFFF"> Ver produtos </a></button>
 
                 </div>
 
@@ -345,19 +365,23 @@ $dados = $categorias[$tipo];
 
         </div>
 
-
+    <p style="color: #ffffff">aaaaafadjfgafgarjgfjl</p>
 
         <!-- PEIXES -->
 
         <div class="grupo-produtos" id="peixes">
 
-            <h2>🐠 Produtos para Peixes</h2>
+            <h2>  Produtos para Peixes</h2>
 
             <div class="produtos-grid">
 
                 <div class="produto">
 
-                    <div class="produto-img">🐠</div>
+                    <div class="produto-img">
+                        <div class="produto-img">
+                            <img src="img_produto/peixe%20comendo.png" style="width: 140%; height: 100%; border-radius: 10%;">
+                        </div>
+                    </div>
 
                     <h3>
                         <?php echo $dados['titulo']; ?> para peixes
@@ -367,7 +391,7 @@ $dados = $categorias[$tipo];
                         Produtos para cuidados com peixes.
                     </p>
 
-                    <button><a href="parte_peixes/petiscoPeixe.php"> Ver produtos </a></button>
+                    <button><a href="parte_peixes/petiscoPeixe.php" style="text-decoration: none; color: #FFFFFF"> Ver produtos </a></button>
 
                 </div>
 
@@ -375,29 +399,33 @@ $dados = $categorias[$tipo];
 
         </div>
 
-
+        <p style="color: #FFFFFF">aaaaafadjfgafgarjgfjl</p>
 
         <!-- PEQUENOS PETS -->
 
         <div class="grupo-produtos" id="pequenos-pets">
 
-            <h2>🐹 Produtos para Pequenos Pets</h2>
+            <h2>Produtos para Roedores</h2>
 
             <div class="produtos-grid">
 
                 <div class="produto">
 
-                    <div class="produto-img">🐹</div>
+                    <div class="produto-img">
+                        <div class="produto-img">
+                            <img src="img_produto/hamster%20comendo.png" style="width: 140%; height: 100%; border-radius: 10%;">
+                        </div>
+                    </div>
 
                     <h3>
-                        <?php echo $dados['titulo']; ?> para pequenos pets
+                        <?php echo $dados['titulo']; ?> para Roedores
                     </h3>
 
                     <p>
                         Produtos para pequenos animais.
                     </p>
 
-                    <button><a href="parte_pequenosPets/petiscoPequenosPets.php"> Ver produtos </a></button>
+                    <button><a href="parte_pequenosPets/petiscoPequenosPets.php" style="text-decoration: none; color: #FFFFFF"> Ver produtos </a></button>
 
                 </div>
 
@@ -405,6 +433,7 @@ $dados = $categorias[$tipo];
 
         </div>
 
+    </div>
 
     </section>
 
